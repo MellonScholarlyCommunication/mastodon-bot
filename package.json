@@ -1,17 +1,17 @@
 {
   "name": "mastodon-bot",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "A Mastodon Bot",
   "main": "index.js",
   "author": "Patrick Hochstenbach <Patrick.Hochstenbach@UGent.be>",
   "license": "MIT",
   "scripts": {
     "fetch": "node node_modules/mastodon-cli/bin/mastodon-cli.js",
-    "server": "npx ldn-inbox-server start-server --inbox-public",
+    "server": "npx ldn-inbox-server start-server",
     "clean": "rm inbox/*",
     "real-clean": "rm .history ; rm inbox/*"
   },
   "dependencies": {
-    "ldn-inbox-server": "^1.4.5"
+    "ldn-inbox-server": "^1.4.6"
   }
 }

@@ -3,7 +3,7 @@ $(document).ready(function() {
 });
 
 function updateList() {
-    $.getJSON("inbox/", (data) => {
+    $.getJSON("accepted/", (data) => {
         const members = data['contains'].sort(
             function(a,b){ return b.localeCompare(a); }
         );
@@ -45,7 +45,7 @@ ${metadata}
             return false;
         });
     }).fail(function(){
-        console.log("Failed to retrieve /inbox/");
+        console.log("Failed to retrieve /accepted/");
     });
     setTimeout(updateList, 2000);
 }

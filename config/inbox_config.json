@@ -1,0 +1,19 @@
+{
+    "registry": [
+        { "path": "accepted/.*" , 
+          "with": {
+            "url": "accepted/",
+            "inbox": "./accepted",
+            "inboxPublic": 1,
+            "inboxWritable": 0
+        }},
+        { "path": "inbox/.*" , 
+          "with": {
+            "url": "inbox/",
+            "inbox": "./inbox",
+            "inboxPublic": 1,
+            "inboxWritable": 1,
+            "schema": "./config/notification_schema.json"
+        }}
+    ]
+}
