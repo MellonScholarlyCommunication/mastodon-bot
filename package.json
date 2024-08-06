@@ -6,6 +6,7 @@
   "author": "Patrick Hochstenbach <Patrick.Hochstenbach@UGent.be>",
   "license": "MIT",
   "scripts": {
+    "fetch": "node node_modules/mastodon-cli/bin/mastodon-cli.js",
     "server": "npx ldn-inbox-server start-server --inbox-public",
     "clean": "rm inbox/*",
     "real-clean": "rm .history ; rm inbox/*"
