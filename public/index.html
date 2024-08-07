@@ -4,51 +4,29 @@
         rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
         />
-        <style>
-            .Details {
-                background-color: #eee;
-                padding-left: 20px;
-            }
-            .TootMeta {
-                background-color: black;
-                color: white;
-            }
-            .TootText {
-                font-family: monospace;
-                color:blueviolet;
-            }
-            .TootBody {
-                font-family: monospace;
-                padding-left: 30px; 
-            }
-            .Metadata {
-                font-family: monospace;
-            }
-        </style>
+        <style src="css/main.css"></style>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
         <title>Mastodon Bot</title>
     </head>
     <body>
         <main class="container">
-            <h1>Mastodon Bot v 1.0.2</h1>
+            <h1>Mastodon Bot v 1.0.3</h1>
 
             <p>Monitoring @hochstenbach@mathstodon.xyz</p>
 
-            <h2>Details</h2>
 
-            <p class="Details"></p>
-
-            <h2>Accepted Toots</h2>
-
-            <p>[<a href="accepted/">Show</a>]</p>
-
-            <i>Contents</i>
-            <ul class="List"> 
-            </ul>
-
-            <h2>Inbox</h2>
-
-            <p>[<a href="inbox/">Show</a>]</p>
+            <div class="row">
+                <div class="column">
+                    <h2>Accepted Toots</h2>
+                    <ul class="List" data-ref="accepted/" data-implement="toot" data-max="10"></ul>
+            
+                    <h2>Inbox</h2>
+                    <ul class="List" data-ref="inbox/" data-implement="en" data-max="10"></ul>
+                </div>
+                <div class="column">
+                    <div class="Details"></div>
+                </div>
+            </div>
 
             <h2>Source Code</h2>
 

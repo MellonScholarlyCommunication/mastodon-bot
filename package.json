@@ -1,6 +1,6 @@
 {
   "name": "mastodon-bot",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A Mastodon Bot",
   "main": "index.js",
   "author": "Patrick Hochstenbach <Patrick.Hochstenbach@UGent.be>",
