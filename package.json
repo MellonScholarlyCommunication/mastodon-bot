@@ -8,6 +8,8 @@
   "scripts": {
     "fetch": "node node_modules/mastodon-cli/bin/mastodon-cli.js",
     "server": "npx ldn-inbox-server start-server",
+    "wikijs": "node node_modules/wikijs-cli/bin/wikijs-cli.js",
+    "updater": "node node_modules/wikijs-cli/bin/updater-cli.js",
     "clean": "rm inbox/*",
     "real-clean": "rm .history ; rm inbox/*"
   },
