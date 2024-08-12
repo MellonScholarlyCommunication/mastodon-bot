@@ -1,20 +1,18 @@
 const logger = require('ldn-inbox-server').getLogger();
-const fs = require('fs');
-const fsPath = require('path');
+const { parseAsJSON } = require('ldn-inbox-server');
+const { addCache, getCache } = require('../lib/cache');
 
 /**
- * Handler to remove the notificatin .meta file
+ * Store the notification in a cache database
  */
 async function handle({path,options,config}) {
     logger.info(`parsing notification ${path}`);
-   
-    const meta = `${path}.meta`;
-
+    
     try {
-        if (fs.existsSync(meta)) {
-            logger.info(`removing ${meta}`);
-            fs.unlinkSync(meta);
-        }
+        const notification = parseAsJSON(path);
+
+        addCache(notification);
+
         return { path, options, success: true };
     }
     catch(e) {

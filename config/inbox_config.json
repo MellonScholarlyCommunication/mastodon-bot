@@ -12,6 +12,7 @@
                     ]
                 ]
               },
+              "./handler/notification_cache.js",
               { 
                 "id": "./handler/metadata_lookup.js" ,
                 "actor": {

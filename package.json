@@ -7,12 +7,13 @@
   "license": "MIT",
   "scripts": {
     "fetch": "node node_modules/mastodon-cli/bin/mastodon-cli.js",
+    "post-data": "cp data/example_announce.jsonld inbox",
     "server": "npx ldn-inbox-server start-server",
     "handle-inbox": "npx ldn-inbox-server handler ./accepted --config ./config/inbox_config.json -hn @handler/notification_handler/multi.js",
     "handle-outbox": "npx ldn-inbox-server handler @outbox -hn @handler/notification_handler/multi.js",
     "wikijs": "node node_modules/wikijs-cli/bin/wikijs-cli.js",
     "updater": "node node_modules/wikijs-cli/bin/updater-cli.js",
-    "clean": "rm inbox/* ; rm accepted/* ; rm error/* ; rm outbox/*",
+    "clean": "rm inbox/* ; rm accepted/* ; rm error/* ; rm outbox/* ; rm data/cache/*",
     "real-clean": "rm .history ; yarn run clean"
   },
   "dependencies": {

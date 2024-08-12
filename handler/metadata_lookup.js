@@ -4,8 +4,7 @@ const md5 = require('md5');
 const fs = require('fs');
 
 /**
- * Handler to lookup an artifact url against Zotero and store the
- * result as a service result file 
+ * Handler to request a metadata lookup from a (remote) metadata server
  */
 async function handle({path,options,config}) {
     logger.info(`parsing notification ${path}`);
