@@ -1,8 +1,11 @@
 {
     "notification_handler": {
         "multi": {
+          // Handlers for the inbox
           "handlers": [
+            // Handler for incoming Mastodon toots
             [
+              // Only Announce(s) from the Mastodon Bot
               { 
                 "id": "@handler/notification_handler/jsonpath_filter.js",
                 "anyOf": [ 
@@ -12,7 +15,9 @@
                     ]
                 ]
               },
+              // Cache this notification for later use
               "./handler/notification_cache.js",
+              // Request the lookup of the metadata for object.url(s) in the Announce
               { 
                 "id": "./handler/metadata_lookup.js" ,
                 "actor": {
@@ -29,6 +34,28 @@
                 }
               }
             ],
+            // Handler for the Announce from the metadata server
+            [
+              // Only Announce(s) from the Metadata server
+              { 
+                "id": "@handler/notification_handler/jsonpath_filter.js",
+                "anyOf": [ 
+                    [ 
+                        { "path": "$.type" , "value": "Announce" } ,
+                        { "path": "$.origin.id" , "value": "http://192.87.108.242/service/z/profile/card#me" }
+                    ]
+                ]
+              },
+              // Check if we have a known inReplyTo document
+              { 
+                "id": "./handler/valid_inreplyto.js",
+              },
+              // Update the wikijs
+              {
+                "id": "./handler/update_wiki.js"
+              }
+            ] ,
+            // Always remote .meta files at the end of a workflow
             [
               "./handler/remove_meta.js"
             ]

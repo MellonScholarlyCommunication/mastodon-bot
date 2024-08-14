@@ -1,17 +1,16 @@
 const logger = require('ldn-inbox-server').getLogger();
-const { parseAsJSON , generateId , generatePublished } = require('ldn-inbox-server');
+const { generateId , generatePublished } = require('ldn-inbox-server');
+const { addCache } = require('../lib/cache');
 const md5 = require('md5');
 const fs = require('fs');
 
 /**
  * Handler to request a metadata lookup from a (remote) metadata server
  */
-async function handle({path,options,config}) {
+async function handle({path,options,config,notification}) {
     logger.info(`parsing notification ${path}`);
     
     try {
-        const notification = parseAsJSON(path);
-
         const object_id = notification['object']['id'];
         const url = notification['object']['url'];
 
@@ -29,6 +28,12 @@ async function handle({path,options,config}) {
             logger.info(`storing Offer to ${outboxFile}`);
     
             fs.writeFileSync(outboxFile,offer);
+
+            // Cache a context document for the original request
+            addCache({
+                "id": offer['id'] ,
+                "createdFor": notification['id']
+            });
         }
 
         return { path, options, success: true };

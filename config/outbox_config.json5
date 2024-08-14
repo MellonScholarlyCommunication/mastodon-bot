@@ -1,6 +1,7 @@
 {
     "notification_handler": {
         "multi": {
+            // Just send out notifications for the outbox
             "handlers": [
                 [
                 "@handler/notification_handler/send_notification.js"
