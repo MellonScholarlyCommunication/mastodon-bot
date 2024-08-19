@@ -3,37 +3,6 @@
         "multi": {
           // Handlers for the inbox
           "handlers": [
-            // Handler for incoming Mastodon toots
-            [
-              // Only Announce(s) from the Mastodon Bot
-              { 
-                "id": "@handler/notification_handler/jsonpath_filter.js",
-                "anyOf": [ 
-                    [ 
-                        { "path": "$.type" , "value": "Announce" } ,
-                        { "path": "$.origin.id" , "value": "http://192.87.108.242/service/m/profile/card#me" }
-                    ]
-                ]
-              },
-              // Cache this notification for later use
-              "./handler/notification_cache.js",
-              // Request the lookup of the metadata for object.url(s) in the Announce
-              { 
-                "id": "./handler/metadata_lookup.js" ,
-                "actor": {
-                  "id": "http://192.87.108.242/service/m/profile/card#me",
-                  "name": "Mastodon Bot",
-                  "inbox": "http://192.87.108.242/service/m/inbox/",
-                  "type": "Service"
-                },
-                "target": {
-                  "id": "http://192.87.108.242/service/x/profile/card#me",
-                  "name": "Zotero Web Service",
-                  "inbox": "http://192.87.108.242/service/x/inbox/",
-                  "type": "Service"
-                }
-              }
-            ],
             // Handler for the Announce from the metadata server
             [
               // Only Announce(s) from the Metadata server

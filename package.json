@@ -8,13 +8,14 @@
   "scripts": {
     "fetch": "node node_modules/mastodon-cli/bin/mastodon-cli.js",
     "server": "npx ldn-inbox-server start-server",
-    "handle-accepted": "npx ldn-inbox-server handler ./accepted --config ./config/inbox_config.json5 -hn @handler/notification_handler/multi.js",
+    "handle-accepted": "npx ldn-inbox-server handler ./accepted --config ./config/accepted_config.json5 -hn @handler/notification_handler/multi.js",
     "handle-inbox": "npx ldn-inbox-server handler @inbox -hn @handler/notification_handler/multi.js",
     "handle-outbox": "npx ldn-inbox-server handler @outbox -hn @handler/notification_handler/multi.js",
     "wikijs": "node node_modules/wikijs-cli/bin/wikijs-cli.js",
     "updater": "node node_modules/wikijs-cli/bin/updater-cli.js",
     "clean": "rm inbox/* ; rm accepted/* ; rm error/* ; rm outbox/* ; rm data/cache/*",
     "real-clean": "rm .history ; yarn run clean",
+    "demo-accepted": "cp data/example_incoming.jsonld accepted",
     "demo-metadata": "cp data/example_{incoming,outgoing}.jsonld data/cache ; cp data/example_metadata.jsonld inbox"
   },
   "dependencies": {

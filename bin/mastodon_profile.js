@@ -13,6 +13,14 @@ if (! account) {
 main();
 
 async function main() {
-    const profile = await mastodon.getResearcherProfile(account);
+    const profile = await mastodon.getProfile(account);
     console.log(profile);
+    const researcherProfile = await mastodon.getResearcherProfile(account);
+    
+    if (researcherProfile) {
+        console.log(`=> ${researcherProfile}`);
+    }
+    else {
+        console.log(`=> no researcher profile found`);
+    }
 }

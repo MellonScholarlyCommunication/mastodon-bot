@@ -21,13 +21,14 @@ async function handle({path,options,config,notification}) {
         for (let i = 0 ; i < url.length ; i++) {
             const url_href = url[i]['href'];
 
-            const offer = JSON.stringify(makeOffer(url_href,config),null,2);
+            const offer = makeOffer(url_href,config);
+            const offerStr = JSON.stringify(offer,null,2);
 
-            const outboxFile = options['outbox'] + '/' + md5(offer) + '.jsonld';
+            const outboxFile = options['outbox'] + '/' + md5(offerStr) + '.jsonld';
 
             logger.info(`storing Offer to ${outboxFile}`);
     
-            fs.writeFileSync(outboxFile,offer);
+            fs.writeFileSync(outboxFile,offerStr);
 
             // Cache a context document for the original request
             addCache({
