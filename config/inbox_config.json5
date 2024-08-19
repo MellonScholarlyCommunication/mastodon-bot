@@ -52,7 +52,8 @@
               },
               // Update the wikijs
               {
-                "id": "./handler/update_wiki.js"
+                "id": "./handler/update_wiki.js",
+                "isDemo": false
               }
             ] ,
             // Always remote .meta files at the end of a workflow
