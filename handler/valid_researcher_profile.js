@@ -1,5 +1,5 @@
 const logger = require('ldn-inbox-server').getLogger();
-const { getResearcherProfile } = require('../lib/mastodon');
+const { getResearcherProfile } = require('mastodon-cli');
 
 /**
  * Handler to check if actor has a valid researcher profile

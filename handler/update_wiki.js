@@ -5,7 +5,7 @@ const Cite = require('citation-js');
 const { resolvePage , getPage, contentInserter, updatePage } = require('wikijs-cli');
 const { fetchOriginal } = require('ldn-inbox-server');
 const { getCache } = require('../lib/cache');
-const { getResearcherProfile } = require('../lib/mastodon');
+const { getResearcherProfile } = require('mastodon-cli');
 
 /**
  * Handler to update wiki.js with new data

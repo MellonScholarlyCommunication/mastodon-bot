@@ -6,7 +6,7 @@
   "author": "Patrick Hochstenbach <Patrick.Hochstenbach@UGent.be>",
   "license": "MIT",
   "scripts": {
-    "fetch": "node node_modules/mastodon-cli/bin/mastodon-cli.js",
+    "fetch": "npx mastodon-cli fetch",
     "server": "npx ldn-inbox-server start-server",
     "handle-accepted": "npx ldn-inbox-server handler ./accepted --config ./config/accepted_config.json5 -hn @handler/notification_handler/multi.js",
     "handle-inbox": "npx ldn-inbox-server handler @inbox -hn @handler/notification_handler/multi.js",
@@ -21,6 +21,7 @@
   "dependencies": {
     "citation-js": "^0.7.15",
     "ldn-inbox-server": "^1.5.5",
+    "mastodon-cli": "^1.0.3",
     "md5": "^2.3.0",
     "node-fetch": "^2.7.0"
   }
