@@ -14,6 +14,7 @@ async function handle({path,options,config,notification}) {
     logger.info(`parsing notification ${path}`);
    
     try {
+        // Try to find the original toot for which metadata was requested
         const inReplyTo = notification['inReplyTo'];
         const cachedContent = getCache(inReplyTo);
 
@@ -37,6 +38,8 @@ async function handle({path,options,config,notification}) {
             logger.info(`found ${originalId} in cache`);
         }
 
+        // Try to resolve the mastodon profile and find the link to the
+        // researcher profile
         const originalMastodonAccount = originalNotification['actor']['id'];
 
         if (! originalMastodonAccount) {
@@ -57,6 +60,7 @@ async function handle({path,options,config,notification}) {
             logger.info(`researcher profile: ${researcherProfile}`);
         }
 
+        // Try to find the metadata service result (this should be a CSL json file)
         const serviceResultId = notification['object']['id'];
 
         if (! serviceResultId) {
@@ -79,6 +83,7 @@ async function handle({path,options,config,notification}) {
 
         logger.debug(serviceResult);
 
+        // Try to turn this CSL json into a HTML citaton in the apa format
         const citation = new Cite(serviceResult);
         const htmlCitation = citation.format('bibliography', {
                 format: 'html',
@@ -96,6 +101,7 @@ async function handle({path,options,config,notification}) {
 
         logger.debug(htmlCitation);
 
+        // Try to update the old Wiki.js researcher profile with the updated citation
         const wiki_url = process.env.WIKIJS_URL;
         const wiki_acess_token = process.env.WIKIJS_ACCESS_TOKEN;
 
@@ -168,6 +174,7 @@ async function handle({path,options,config,notification}) {
             logger.info(`updated page ${currentPage.id} at wiki.js`);
         }
 
+        // Todo: maybe try to create an event log
         return { path, options, success: true };
     }
     catch(e) {
