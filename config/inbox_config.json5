@@ -25,6 +25,23 @@
                 "isDemo": false
               }
             ] ,
+            // Move the Reject to error for now
+            [
+// Only Announce(s) from the Metadata server
+              { 
+                "id": "@handler/notification_handler/jsonpath_filter.js",
+                "anyOf": [ 
+                    [ 
+                        { "path": "$.type" , "value": "Reject" } ,
+                        { "path": "$.origin.id" , "value": "http://192.87.108.242/service/z/profile/card#me" }
+                    ]
+                ]
+              },
+              {
+                "id": "./handler/move.js",
+                "to": "./error"
+              }
+            ],
             // Always remote .meta files at the end of a workflow
             [
               "./handler/remove_meta.js"
