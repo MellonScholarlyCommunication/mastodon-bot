@@ -20,7 +20,7 @@
   },
   "dependencies": {
     "citation-js": "^0.7.15",
-    "ldn-inbox-server": "^1.5.5",
+    "ldn-inbox-server": "^1.6.0",
     "mastodon-cli": "^1.0.4",
     "md5": "^2.3.0",
     "node-fetch": "^2.7.0"
