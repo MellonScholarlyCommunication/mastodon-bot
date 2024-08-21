@@ -43,7 +43,7 @@ async function handle({path,options,config,notification}) {
         }
 
         const currentContent = currentPage.content;
-
+        
         logger.debug(`currentContent`);
         logger.debug(currentContent);
         logger.debug(`htmlCitation`);
@@ -67,23 +67,26 @@ async function handle({path,options,config,notification}) {
 
         if (process.env.DEMO_MODE) {
             logger.info(`**demo mode** I will not do anything`);
-            return { path, options, success: true }; 
-        }
-
-        const newPage = await updatePage(currentPage.id , {
-            content: updatedContent
-        }, {
-            url: wiki_url ,
-            token: wiki_acess_token
-        });
-
-        if (! newPage) {
-            logger.error(`failed to update ${currentPage.id} at wiki.js`);
-            return { path, options, success: false };
         }
         else {
-            logger.info(`updated page ${currentPage.id} at wiki.js`);
+            const newPage = await updatePage(currentPage.id , {
+                content: updatedContent
+            }, {
+                url: wiki_url ,
+                token: wiki_acess_token
+            });
+
+            if (! newPage) {
+                logger.error(`failed to update ${currentPage.id} at wiki.js`);
+                return { path, options, success: false };
+            }
+            else {
+                logger.info(`updated page ${currentPage.id} at wiki.js`);
+            }
         }
+
+        // Create the toot
+        options['toot'] = `I updated your researcher contributions ${researcherProfile} :)`;
 
         return { path, options, success: true };
     }

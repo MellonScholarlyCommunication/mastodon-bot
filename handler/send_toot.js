@@ -2,20 +2,21 @@ const logger = require('ldn-inbox-server').getLogger();
 const { sendNotification } = require('mastodon-cli');
 
 /**
- * Handler send a happy toot to the original sender
+ * Handler send a toot to the original sender
  */
 async function handle({path,options,config,notification}) {
     try {
-        const originalNotification = options['originalNotification'];
-        const researcherProfile = options['researcherProfile'];
+        const toot_fragment = options['toot'];
 
-        if (! originalNotification) {
-            logger.error(`no originalNotification found in options`);
+        if (! toot_fragment) {
+            logger.error(`no toot found in options`);
             return { path, options, success: false };
         }
 
-        if (! researcherProfile) {
-            logger.error(`no researcherProfile found in options`);
+        const originalNotification = options['originalNotification'];
+
+        if (! originalNotification) {
+            logger.error(`no originalNotification found in options`);
             return { path, options, success: false };
         }
 
@@ -35,9 +36,9 @@ async function handle({path,options,config,notification}) {
 
         const account = `@${matches[2]}@${matches[1]}`;
 
-        logger.info(`Sending happy toot to ${account}`);
+        const toot = `${account} ${toot_fragment}`;
 
-        const toot = `${account} I updated your researcher contributions ${researcherProfile} :)`;
+        logger.info(`Sending toot : ${toot}`);
 
         if (process.env.DEMO_MODE) {
             logger.info(`**demo mode** I will not do anything`);

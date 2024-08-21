@@ -16,11 +16,12 @@
     "clean": "rm inbox/* ; rm accepted/* ; rm error/* ; rm outbox/* ; rm data/cache/*",
     "real-clean": "rm .history ; yarn run clean",
     "demo-accepted": "cp data/example_incoming.jsonld accepted",
-    "demo-metadata": "cp data/example_{incoming,outgoing}.jsonld data/cache ; cp data/example_metadata.jsonld inbox"
+    "demo-metadata": "cp data/example_{incoming,outgoing}.jsonld data/cache ; cp data/example_metadata.jsonld inbox",
+    "demo-metadata-reject": "cp data/example_{incoming,outgoing}.jsonld data/cache ; cp data/example_metadata_reject.jsonld inbox"
   },
   "dependencies": {
     "citation-js": "^0.7.15",
-    "ldn-inbox-server": "^1.6.0",
+    "ldn-inbox-server": "^1.6.3",
     "mastodon-cli": "^1.0.6",
     "md5": "^2.3.0",
     "node-fetch": "^2.7.0"

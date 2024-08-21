@@ -27,6 +27,14 @@
               {
                 "id": "./handler/restore_researcher_profile.js"
               },
+              // From here if something goes wrong move it to the errors
+              {
+                "id": "@handler/notification_handler/on_error.js",
+                "handler": {
+                  "id": "./handler/move.js",
+                  "to": "./error" 
+                }
+              },
               // Create a html citation from the service result
               {
                 "id": "./handler/create_html_citation.js"
@@ -37,12 +45,12 @@
               },
               // Send a happy toot to the user
               {
-                "id": "./handler/send_happy_toot.js"
+                "id": "./handler/send_toot.js"
               }
             ] ,
             // Move the Reject to error for now
             [
-            // Only Announce(s) from the Metadata server
+              // Only Announce(s) from the Metadata server
               { 
                 "id": "@handler/notification_handler/jsonpath_filter.js",
                 "anyOf": [ 
@@ -52,6 +60,27 @@
                     ]
                 ]
               },
+              // Check if we have a known inReplyTo document
+              { 
+                "id": "./handler/valid_inreplyto.js",
+              },
+              // Restore the original notification from the cache
+              {
+                "id": "./handler/restore_orginal_notification.js"
+              },
+              // Restore the researcher profile
+              {
+                "id": "./handler/restore_researcher_profile.js"
+              },
+              // Create a toot for failed metadata lookups
+              {
+                "id": "./handler/metadata_failed_toot.js"
+              },
+              // Send a sad toot to the user 
+              {
+                "id": "./handler/send_toot.js"
+              },
+              // Move the failed notification to error
               {
                 "id": "./handler/move.js",
                 "to": "./error"

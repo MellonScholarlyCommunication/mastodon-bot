@@ -10,10 +10,10 @@ async function handle({path,options,config,notification}) {
         const inReplyTo = notification['inReplyTo'];
         const cachedContent = getCache(inReplyTo);
  
-        const originalId = cachedContent.createdFor;
+        const originalId = cachedContent.original;
  
         if (! originalId) {
-            logger.error(`can not find a createdFor in context`);
+            logger.error(`can not find on original in context`);
             return { path, options, success: false };
         }
         else {
@@ -31,6 +31,7 @@ async function handle({path,options,config,notification}) {
         }
 
         options['originalNotification'] = originalNotification;
+        options['outgoingNotification'] = cachedContent;
 
         return { path, options, success: true };
     }

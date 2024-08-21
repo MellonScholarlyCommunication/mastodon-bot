@@ -1,4 +1,17 @@
 {
+    "@context": "https://www.w3.org/ns/activitystreams",
     "id": "urn:uuid:75806b42-41f5-46fb-8519-6e964c93c19e",
-    "createdFor": "urn:uuid:6d21a2ae-df59-40d9-999c-18e19277d21a"
+    "type": "Offer",
+    "published": "2024-08-01T07:00:11.000Z",
+    "original": "urn:uuid:6d21a2ae-df59-40d9-999c-18e19277d21a",
+    "actor": {
+      "id": "http://192.87.108.242/service/m/profile/card#me",
+      "name": "Mastodon Bot",
+      "inbox": "http://192.87.108.242/service/m/inbox/",
+      "type": "Service"
+    },
+    "object": {
+      "id": "https://journal.code4lib.org/articles/17823",
+      "type": "Document"
+    }
 }

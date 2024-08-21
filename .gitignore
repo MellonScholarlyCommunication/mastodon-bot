@@ -3,5 +3,6 @@
 node_modules
 inbox/**
 outbox/**
+error/**
 accepted/**
 data/cache/**

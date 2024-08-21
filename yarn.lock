@@ -534,10 +534,10 @@ jsonschema@^1.4.1:
   resolved "https://registry.yarnpkg.com/jsonschema/-/jsonschema-1.4.1.tgz#cc4c3f0077fb4542982973d8a083b6b34f482dab"
   integrity sha512-S6cATIPVv1z0IlxdN+zUk5EPjkGCdnhN4wVSBlvoUO1tOLJootbo9CquNJmbIh4yikWHiUedhRYrNPn1arpEmQ==
 
-ldn-inbox-server@^1.6.0:
-  version "1.6.0"
-  resolved "https://registry.yarnpkg.com/ldn-inbox-server/-/ldn-inbox-server-1.6.0.tgz#f50964ba980f47c31e78c7bcd651064357a97685"
-  integrity sha512-TF6z1Apt07Z5Ke/BgC2ERX3zIdH0Is3nEbGGtV/Z9vvjFc5rp3T9+vX5RCantRG2V53wIheUzZrcsGb1F8r3oQ==
+ldn-inbox-server@^1.6.3:
+  version "1.6.3"
+  resolved "https://registry.yarnpkg.com/ldn-inbox-server/-/ldn-inbox-server-1.6.3.tgz#9b2d47c3f927972aff37324437d8d2c123774959"
+  integrity sha512-0y+47raAmCGFBByvmeBXg/ML3IFXtzTgvzwnoKIG21+IyzN4hHIqRSqFmqMTR821LFut3cpKLGGMbKOwUQigNw==
   dependencies:
     chokidar "^3.6.0"
     commander "^12.0.0"
