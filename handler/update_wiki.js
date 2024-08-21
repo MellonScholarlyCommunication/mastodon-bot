@@ -5,7 +5,7 @@ const Cite = require('citation-js');
 const { resolvePage , getPage, contentInserter, updatePage } = require('wikijs-cli');
 const { fetchOriginal } = require('ldn-inbox-server');
 const { getCache } = require('../lib/cache');
-const { getResearcherProfile } = require('mastodon-cli');
+const { getAttachment } = require('mastodon-cli');
 
 /**
  * Handler to update wiki.js with new data
@@ -50,7 +50,7 @@ async function handle({path,options,config,notification}) {
             logger.info(`mastodon account: ${originalMastodonAccount}`);
         }
 
-        const researcherProfile = await getResearcherProfile(originalMastodonAccount);
+        const researcherProfile = await getAttachment(originalMastodonAccount,/resea.*con.*/i);
 
         if (! researcherProfile) {
             logger.error(`can not find researcher profile for ${originalMastodonAccount}`);
@@ -154,7 +154,7 @@ async function handle({path,options,config,notification}) {
             return { path, options, success: true }; 
         }
 
-        if (config.isDemo) {
+        if (process.env.DEMO_MODE) {
             logger.info(`**demo mode** I will not do anything`);
             return { path, options, success: true }; 
         }

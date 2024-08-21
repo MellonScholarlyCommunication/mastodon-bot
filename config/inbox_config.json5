@@ -21,8 +21,7 @@
               },
               // Update the wikijs
               {
-                "id": "./handler/update_wiki.js",
-                "isDemo": false
+                "id": "./handler/update_wiki.js"
               }
             ] ,
             // Move the Reject to error for now

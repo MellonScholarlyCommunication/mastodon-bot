@@ -1,5 +1,5 @@
 const logger = require('ldn-inbox-server').getLogger();
-const { getResearcherProfile } = require('mastodon-cli');
+const { getAttachment } = require('mastodon-cli');
 
 /**
  * Handler to check if actor has a valid researcher profile
@@ -21,7 +21,7 @@ async function handle({path,options,config,notification}) {
             logger.info(`mastodon account: ${mastodonAccount}`);
         }
 
-        const researcherProfile = await getResearcherProfile(mastodonAccount);
+        const researcherProfile = await getAttachment(mastodonAccount,/resea.*con.*/i);
 
         if (! researcherProfile) {
             logger.error(`can not find researcher profile for ${mastodonAccount}`);

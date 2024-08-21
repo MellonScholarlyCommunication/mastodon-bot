@@ -495,10 +495,10 @@ log4js@^6.9.1:
     rfdc "^1.3.0"
     streamroller "^3.1.5"
 
-mastodon-cli@^1.0.3:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/mastodon-cli/-/mastodon-cli-1.0.3.tgz#910554d27126f9c492232cec5a16219782d60725"
-  integrity sha512-vWinC67v3mvPJQc+ppixumxu85bKjsXzNmHBUfS8PxMn11elyOGUL2tdnF9r9WRtyjaRiITkWlYfxfCFbyCmeg==
+mastodon-cli@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/mastodon-cli/-/mastodon-cli-1.0.4.tgz#e13165a85c1628deddd2f65439926bbab538aa60"
+  integrity sha512-l8t7UKBGQ7gJuxJs87EstHGbK45twI3c3HfVJXA5FuI0SotiOL7m3pvvM9vH3hT9NQ4q4LCffB3Xl9Tj+PurzQ==
   dependencies:
     commander "^12.1.0"
     dotenv "^16.4.5"
