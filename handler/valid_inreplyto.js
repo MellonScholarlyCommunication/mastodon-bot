@@ -7,8 +7,6 @@ const { getCache } = require('../lib/cache');
  * Handler to check if the inreply to contains a known notification
  */
 async function handle({path,options,config,notification}) {
-    logger.info(`parsing notification ${path}`);
-   
     try {
         const inReplyTo = notification['inReplyTo'];
 

@@ -6,8 +6,6 @@ const fsPath = require('path');
  * Handler to remove the notificatin .meta file
  */
 async function handle({path,options,config}) {
-    logger.info(`parsing notification ${path}`);
-   
     const meta = `${path}.meta`;
 
     try {

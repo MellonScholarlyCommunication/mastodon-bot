@@ -5,8 +5,6 @@ const { sendNotification } = require('mastodon-cli');
  * Handler send a happy toot to the original sender
  */
 async function handle({path,options,config,notification}) {
-    logger.info(`parsing notification ${path}`);
-   
     try {
         const originalNotification = options['originalNotification'];
         const researcherProfile = options['researcherProfile'];
@@ -41,11 +39,16 @@ async function handle({path,options,config,notification}) {
 
         const toot = `${account} I updated your researcher contributions ${researcherProfile} :)`;
 
-        await sendNotification(process.env.MASTODON_URL,toot, {
-            token: process.env.MASTODON_ACCESS_TOKEN
-        });
-
-        return { path, options, success: true };
+        if (process.env.DEMO_MODE) {
+            logger.info(`**demo mode** I will not do anything`);
+            return { path, options, success: true }; 
+        }
+        else {
+            await sendNotification(process.env.MASTODON_URL,toot, {
+                token: process.env.MASTODON_ACCESS_TOKEN
+            });
+            return { path, options, success: true };
+        }
     }
     catch(e) {
         logger.error(`failed to process ${path}`);

@@ -6,8 +6,6 @@ const { addCache } = require('../lib/cache');
  * Store the notification in a cache database
  */
 async function handle({path,options,config,notification}) {
-    logger.info(`parsing notification ${path}`);
-    
     try {
         addCache(notification);
 

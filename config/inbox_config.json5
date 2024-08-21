@@ -19,6 +19,18 @@
               { 
                 "id": "./handler/valid_inreplyto.js",
               },
+              // Restore the original notification from the cache
+              {
+                "id": "./handler/restore_orginal_notification.js"
+              },
+              // Restore the researcher profile
+              {
+                "id": "./handler/restore_researcher_profile.js"
+              },
+              // Create a html citation from the service result
+              {
+                "id": "./handler/create_html_citation.js"
+              },
               // Update the wikijs
               {
                 "id": "./handler/update_wiki.js"

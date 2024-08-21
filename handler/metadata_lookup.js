@@ -8,8 +8,6 @@ const fs = require('fs');
  * Handler to request a metadata lookup from a (remote) metadata server
  */
 async function handle({path,options,config,notification}) {
-    logger.info(`parsing notification ${path}`);
-    
     try {
         const object_id = notification['object']['id'];
         const url = notification['object']['url'];

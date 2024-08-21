@@ -6,8 +6,6 @@ const fsPath = require('path');
  * Handler to move a notification to another folder
  */
 async function handle({path,options,config,notification}) {
-    logger.info(`parsing notification ${path}`);
-   
     try {
         if (! config.to && fs.existsSync(config.to)) {
             logger.error(`no .to option in config`);

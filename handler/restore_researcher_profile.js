@@ -2,33 +2,37 @@ const logger = require('ldn-inbox-server').getLogger();
 const { getAttachment } = require('mastodon-cli');
 
 /**
- * Handler to check if actor has a valid researcher profile
+ * Handler restore the researcher profile
  */
 async function handle({path,options,config,notification}) {
     try {
+        const originalNotification = options['originalNotification'];
+
         // Try to resolve the mastodon profile and find the link to the
         // researcher profile
-        const id = notification['id'];
-        const mastodonAccount = notification['actor']['id'];
+        const originalMastodonAccount = originalNotification['actor']['id'];
 
-        if (! mastodonAccount) {
-            logger.error(`can not find mastodon account in ${id}`);
+        if (! originalMastodonAccount) {
+            logger.error(`can not find mastodon account in ${originalNotification.id}`);
             return { path, options, success: false };
         }
         else {
-            logger.info(`mastodon account: ${mastodonAccount}`);
+            logger.info(`mastodon account: ${originalMastodonAccount}`);
         }
 
-        const researcherProfile = await getAttachment(mastodonAccount,/resea.*con.*/i);
+        const researcherProfile = await getAttachment(originalMastodonAccount,/resea.*con.*/i);
 
         if (! researcherProfile) {
-            logger.error(`can not find researcher profile for ${mastodonAccount}`);
+            logger.error(`can not find researcher profile for ${originalMastodonAccount}`);
             return { path, options, success: false };
         }
         else {
             logger.info(`researcher profile: ${researcherProfile}`);
-            return { path, options, success: true };
         }
+
+        options['researcherProfile'] = researcherProfile;
+
+        return { path, options, success: true };
     }
     catch(e) {
         logger.error(`failed to process ${path}`);
