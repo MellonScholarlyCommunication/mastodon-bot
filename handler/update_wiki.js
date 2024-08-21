@@ -154,6 +154,11 @@ async function handle({path,options,config,notification}) {
             return { path, options, success: true }; 
         }
 
+        // Pass on some important results to the next handler in line :P
+        options['originalNotification'] = originalNotification;
+        options['researcherProfile'] = researcherProfile;
+        // -------------------------------------------------------------
+
         if (process.env.DEMO_MODE) {
             logger.info(`**demo mode** I will not do anything`);
             return { path, options, success: true }; 
@@ -174,7 +179,7 @@ async function handle({path,options,config,notification}) {
             logger.info(`updated page ${currentPage.id} at wiki.js`);
         }
 
-        // Todo: maybe try to create an event log
+
         return { path, options, success: true };
     }
     catch(e) {

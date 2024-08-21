@@ -22,11 +22,15 @@
               // Update the wikijs
               {
                 "id": "./handler/update_wiki.js"
+              },
+              // Send a happy toot to the user
+              {
+                "id": "./handler/send_happy_toot.js"
               }
             ] ,
             // Move the Reject to error for now
             [
-// Only Announce(s) from the Metadata server
+            // Only Announce(s) from the Metadata server
               { 
                 "id": "@handler/notification_handler/jsonpath_filter.js",
                 "anyOf": [ 
