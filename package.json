@@ -22,7 +22,7 @@
   "dependencies": {
     "citation-js": "^0.7.15",
     "ldn-inbox-server": "^1.6.3",
-    "mastodon-cli": "^1.0.6",
+    "mastodon-cli": "^1.0.7",
     "md5": "^2.3.0",
     "node-fetch": "^2.7.0"
   }
