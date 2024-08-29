@@ -6,6 +6,7 @@
   "author": "Patrick Hochstenbach <Patrick.Hochstenbach@UGent.be>",
   "license": "MIT",
   "scripts": {
+    "fetch-cron": "npx mastodon-cli fetch",
     "fetch": "npx mastodon-cli fetch --streaming",
     "server": "npx ldn-inbox-server start-server",
     "handle-accepted": "npx ldn-inbox-server handler ./accepted --config ./config/accepted_config.json5 -hn @handler/notification_handler/multi.js",

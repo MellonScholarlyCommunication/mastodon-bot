@@ -15,6 +15,15 @@
                     ]
                 ]
               },
+              // Only toots from friends
+              {
+                "id": "@handler/notification_handler/jsonpath_filter.js",
+                "anyOf": [ 
+                    [ { "path": "$.actor.id" , "value": "https://mastodon.social/@patrickhochstenbach" } ],
+                    [ { "path": "$.actor.id" , "value": "https://openbiblio.social/@hochstenbach" } ],
+                    [ { "path": "$.actor.id" , "value": "https://w3c.social/@hvdsomp" } ],
+                ]
+              },
               // Check if the actor has a researcher profile
               {
                 "id": "./handler/valid_researcher_profile.js"
@@ -39,6 +48,10 @@
                   "type": "Service"
                 }
               }
+            ],
+            // Always remote .meta files at the end of a workflow
+            [
+              "./handler/remove_meta.js"
             ]
           ]
         }
