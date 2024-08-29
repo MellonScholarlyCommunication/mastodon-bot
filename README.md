@@ -6,7 +6,6 @@ A Mastodon bot for the UGent/SURF researcher profile project.
 
 ```
 yarn install
-yarn link mastodon-cli
 yarn link wikijs-cli
 ```
 

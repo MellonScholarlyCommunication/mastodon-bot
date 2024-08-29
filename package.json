@@ -1,6 +1,6 @@
 {
   "name": "mastodon-bot",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A Mastodon Bot",
   "main": "index.js",
   "author": "Patrick Hochstenbach <Patrick.Hochstenbach@UGent.be>",
@@ -22,7 +22,7 @@
   "dependencies": {
     "citation-js": "^0.7.15",
     "ldn-inbox-server": "^1.6.5",
-    "mastodon-cli": "^1.0.7",
+    "mastodon-cli": "^1.0.8",
     "md5": "^2.3.0",
     "node-fetch": "^2.7.0"
   }

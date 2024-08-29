@@ -46,7 +46,8 @@ async function handle({path,options,config,notification}) {
         }
         else {
             await sendNotification(process.env.MASTODON_URL,toot, {
-                token: process.env.MASTODON_ACCESS_TOKEN
+                token: process.env.MASTODON_ACCESS_TOKEN,
+                visibility: 'unlisted'
             });
             return { path, options, success: true };
         }
