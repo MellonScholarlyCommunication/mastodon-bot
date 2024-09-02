@@ -22,6 +22,7 @@
   },
   "dependencies": {
     "citation-js": "^0.7.15",
+    "commander": "^12.1.0",
     "ldn-inbox-server": "^1.6.5",
     "mastodon-cli": "^1.0.8",
     "md5": "^2.3.0",
