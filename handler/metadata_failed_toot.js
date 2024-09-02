@@ -5,17 +5,17 @@ const logger = require('ldn-inbox-server').getLogger();
  */
 async function handle({path,options,config,notification}) {
     try {
-        const outgoingNotification = options['outgoingNotification'];
+        const metadataLookupNotification = options['metadataLookupNotification'];
 
-        if (! outgoingNotification) {
-            logger.error(`no outgoingNotification found in context`);
+        if (! metadataLookupNotification) {
+            logger.error(`no metadataLookupNotification found in context`);
             return { path, options, success: false };
         }
 
-        const object = outgoingNotification.object?.id;
+        const object = metadataLookupNotification.object?.id;
 
         if (! object) {
-            logger.error(`no object.id found in outgoingNotification`);
+            logger.error(`no object.id found in metadataLookupNotification`);
             return { path, options, success: false }; 
         }
 

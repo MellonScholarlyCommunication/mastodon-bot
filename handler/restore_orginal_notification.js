@@ -30,8 +30,11 @@ async function handle({path,options,config,notification}) {
             logger.info(`found ${originalId} in cache`);
         }
 
+        // The originalNotification is the mastodon toot send to @claimbot (and turned into 
+        // an EN)
         options['originalNotification'] = originalNotification;
-        options['outgoingNotification'] = cachedContent;
+        // The metadataLookupNotification is the offer that was send to the Zotero server
+        options['metadataLookupNotification'] = cachedContent;
 
         return { path, options, success: true };
     }
