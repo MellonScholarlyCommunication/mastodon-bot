@@ -22,6 +22,7 @@
                     [ { "path": "$.actor.id" , "value": "https://mastodon.social/@patrickhochstenbach" } ],
                     [ { "path": "$.actor.id" , "value": "https://openbiblio.social/@hochstenbach" } ],
                     [ { "path": "$.actor.id" , "value": "https://w3c.social/@hvdsomp" } ],
+                    [ { "path": "$.actor.id" , "value": "https://social.edu.nl/@hvdsomp" } ]
                 ]
               },
               // Check if the actor has a researcher profile
