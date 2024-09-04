@@ -11,7 +11,7 @@
                 "anyOf": [ 
                     [ 
                         { "path": "$.type" , "value": "Announce" } ,
-                        { "path": "$.origin.id" , "value": "https://192.87.108.242/service/z/profile/card#me" }
+                        { "path": "$.origin.id" , "value": "https://mycontributions.info/service/z/profile/card#me" }
                     ]
                 ]
               },
@@ -56,7 +56,7 @@
                 "anyOf": [ 
                     [ 
                         { "path": "$.type" , "value": "Reject" } ,
-                        { "path": "$.origin.id" , "value": "https://192.87.108.242/service/z/profile/card#me" }
+                        { "path": "$.origin.id" , "value": "https://mycontributions.info/service/z/profile/card#me" }
                     ]
                 ]
               },

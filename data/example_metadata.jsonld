@@ -4,26 +4,26 @@
     "type": "Announce",
     "published": "2024-08-14T11:49:03.159Z",
     "actor": {
-        "id": "http://192.87.108.242/service/z/profile/card#me",
+        "id": "http://mycontributions.info/service/z/profile/card#me",
         "name": "Zotero Service Provider",
-        "inbox": "http://192.87.108.242/service/z/inbox/",
+        "inbox": "http://mycontributions.info/service/z/inbox/",
         "type": "Service"
     },
     "origin": {
-        "id": "http://192.87.108.242/service/z/profile/card#me",
+        "id": "http://mycontributions.info/service/z/profile/card#me",
         "name": "Zotero Service Provider",
-        "inbox": "http://192.87.108.242/service/z/inbox/",
+        "inbox": "http://mycontributions.info/service/z/inbox/",
         "type": "Service"
     },
     "inReplyTo": "urn:uuid:75806b42-41f5-46fb-8519-6e964c93c19e",
     "object": {
-        "id": "http://192.87.108.242/service/x/result/2024/08/14/9a3b6978a49f9aaf055181e5993c5d89.json",
+        "id": "http://mycontributions.info/service/x/result/2024/08/14/9a3b6978a49f9aaf055181e5993c5d89.json",
         "type": "Document"
     },
     "target": {
-        "id": "http://192.87.108.242/service/m/profile/card#me",
+        "id": "http://mycontributions.info/service/m/profile/card#me",
         "name": "Mastodon Bot",
-        "inbox": "http://192.87.108.242/service/m/inbox/",
+        "inbox": "http://mycontributions.info/service/m/inbox/",
         "type": "Service"
     }
 }
