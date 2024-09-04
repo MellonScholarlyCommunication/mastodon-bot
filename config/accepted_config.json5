@@ -11,7 +11,7 @@
                 "anyOf": [ 
                     [ 
                         { "path": "$.type" , "value": "Announce" } ,
-                        { "path": "$.origin.id" , "value": "http://192.87.108.242/service/m/profile/card#me" }
+                        { "path": "$.origin.id" , "value": "https://192.87.108.242/service/m/profile/card#me" }
                     ]
                 ]
               },
@@ -36,15 +36,15 @@
               { 
                 "id": "./handler/metadata_lookup.js" ,
                 "actor": {
-                  "id": "http://192.87.108.242/service/m/profile/card#me",
+                  "id": "https://192.87.108.242/service/m/profile/card#me",
                   "name": "Mastodon Bot",
-                  "inbox": "http://192.87.108.242/service/m/inbox/",
+                  "inbox": "https://192.87.108.242/service/m/inbox/",
                   "type": "Service"
                 },
                 "target": {
-                  "id": "http://192.87.108.242/service/x/profile/card#me",
+                  "id": "https://192.87.108.242/service/x/profile/card#me",
                   "name": "Zotero Web Service",
-                  "inbox": "http://192.87.108.242/service/x/inbox/",
+                  "inbox": "https://192.87.108.242/service/x/inbox/",
                   "type": "Service"
                 }
               }
