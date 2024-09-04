@@ -8,7 +8,6 @@ const { resolvePage , getPage, contentInserter, updatePage } = require('wikijs-c
  */
 async function handle({path,options,config,notification}) {
     try {
-        const originalNotification = options['originalNotification'];
         const researcherProfile = options['researcherProfile'];
         const htmlCitation = options['htmlCitation'];
 
@@ -28,7 +27,7 @@ async function handle({path,options,config,notification}) {
         else {
             logger.info(`resolved ${researcherProfile} to be wiki.js page ${resolvedPage.id}`);
         }
-
+    
         const currentPage = await getPage(resolvedPage.id, {
             url: wiki_url ,
             token: wiki_acess_token 
