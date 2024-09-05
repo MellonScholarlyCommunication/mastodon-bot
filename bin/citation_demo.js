@@ -1,8 +1,6 @@
 #!/usr/bin/env node
 
 const { program } = require('commander');
-
-const path = require('path');
 const fs = require('fs');
 const Cite = require('citation-js');
 

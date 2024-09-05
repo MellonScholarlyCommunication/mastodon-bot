@@ -5,10 +5,17 @@ const cache = require('../lib/cache');
 const fs = require('fs');
 const chalk = require('chalk');
 
-const logger = require('ldn-inbox-server').getLogger();
+require('dotenv').config();
 
 program
     .name('cache_admin.js');
+
+program
+    .command('init')
+    .action( async() => {
+        const result = await cache.initCache();
+        console.log(result);
+    });
 
 program
     .command('list')
@@ -29,18 +36,19 @@ program
     .command('add')
     .argument('<file...>','json notification')
     .action( async (file) => {
-        file.forEach( (json) => {
+        for (let i = 0 ; i < file.length ; i++) {
+            const json = file[i];
             const data = JSON.parse(fs.readFileSync(json, { encoding: 'utf-8'}));
-            const result = cache.addCache(data);
+            const result = await cache.addCache(data);
             console.log(result);
-        });
+        }
     });
 
 program
     .command('remove')
     .argument('<id>','cache identifier')
     .action( async (id) => {
-        const result = cache.removeCache(id)
+        const result = await cache.removeCache(id)
         console.log(result);
     });
 
@@ -49,7 +57,7 @@ program
     .action( async () => {
         const list = cache.listCache();
         for (let i = 0 ; i < list.length ; i++) {
-            const result = cache.removeCache(list[i]);
+            const result = await cache.removeCache(list[i]);
             console.log(`${list[i]} ${result}`);
         }
     });
@@ -57,9 +65,9 @@ program
 program
     .command('summary')
     .action( async () => {
-        const list = cache.listCache();
+        const list = await cache.listCache();
         for (let i = 0 ; i < list.length ; i++) {
-            const notification = cache.getCache(list[i]);
+            const notification = await cache.getCache(list[i]);
             let id = notification.id;
             let type = notification.type;
             let actor = notification.actor.id;
