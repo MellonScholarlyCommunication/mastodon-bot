@@ -30,7 +30,7 @@ async function handle({path,options,config,notification}) {
 
             // Cache a context document for the original request
             offer['original'] = notification['id'];
-            addCache(offer);
+            await addCache(offer);
         }
 
         return { path, options, success: true };
