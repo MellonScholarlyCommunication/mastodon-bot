@@ -14,13 +14,14 @@
     "handle-outbox": "npx ldn-inbox-server handler @outbox -hn @handler/notification_handler/multi.js",
     "wikijs": "node node_modules/wikijs-cli/bin/wikijs-cli.js",
     "updater": "node node_modules/wikijs-cli/bin/updater-cli.js",
-    "clean": "rm inbox/* ; rm accepted/* ; rm error/* ; rm outbox/* ; rm data/cache/*",
+    "clean": "rm inbox/* ; rm accepted/* ; rm error/* ; rm outbox/* ; ./bin/cache_admin.js remove-all",
     "real-clean": "rm .history ; yarn run clean",
     "demo-accepted": "cp data/example_incoming.jsonld accepted",
-    "demo-metadata": "cp data/example_{incoming,outgoing}.jsonld data/cache ; cp data/example_metadata.jsonld inbox",
-    "demo-metadata-reject": "cp data/example_{incoming,outgoing}.jsonld data/cache ; cp data/example_metadata_reject.jsonld inbox"
+    "demo-metadata": "./bin/cache_admin.js add data/example_incoming.jsonld data/example_outgoing.jsonld ; cp data/example_metadata.jsonld inbox",
+    "demo-metadata-reject": "./bin/cache_admin.js add data/example_incoming.jsonld data/example_outgoing.jsonld ; cp data/example_metadata_reject.jsonld inbox"
   },
   "dependencies": {
+    "chalk": "2.4.2",
     "citation-js": "^0.7.15",
     "commander": "^12.1.0",
     "ldn-inbox-server": "^1.6.5",
