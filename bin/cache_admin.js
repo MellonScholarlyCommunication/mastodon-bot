@@ -5,7 +5,7 @@ const cache = require('../lib/cache');
 const fs = require('fs');
 const chalk = require('chalk');
 
-require('dotenv').config();
+require('dotenv').config({path:`${__dirname}/../.env`});
 
 program
     .name('cache_admin.js');
