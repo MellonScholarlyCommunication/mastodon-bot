@@ -68,14 +68,16 @@ program
         const list = await cache.listCache();
         for (let i = 0 ; i < list.length ; i++) {
             const notification = await cache.getCache(list[i]);
-            let id = notification.id;
-            let type = notification.type;
-            let actor = notification.actor.id;
-            let object = notification.object.id;
+            const id = notification.id;
+            const type = notification.type;
+            const actor = notification.actor.id;
+            const object = notification.object.id;
+            const updated = notification.updated;
 
             console.log(`${chalk.blue(id)} ${chalk.red(type)}`);
             console.log(` ${chalk.yellow('from')}: ${actor}`);
             console.log(` ${chalk.yellow('object')}: ${object}`);
+            console.log(` ${chalk.yellow('updated')}: ${updated}`);
             console.log();
         }
     });
