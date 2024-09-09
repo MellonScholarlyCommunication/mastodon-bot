@@ -35,6 +35,10 @@
                   "to": "./error" 
                 }
               },
+              // Cache this notification for later use
+              {
+                "id": "./handler/notification_cache.js"
+              },
               // Create a html citation from the service result
               {
                 "id": "./handler/create_html_citation.js"
@@ -46,6 +50,16 @@
               // Send a happy toot to the user
               {
                 "id": "./handler/send_toot.js"
+              },
+              // Generate a event notification for this toot also
+              { 
+                "id": "./handler/generate_toot_announce.js" ,
+                "actor": {
+                  "id": "https://mycontributions.info/service/m/profile/card#me",
+                  "name": "Mastodon Bot",
+                  "inbox": "https://mycontributions.info/service/m/inbox/",
+                  "type": "Service"
+                }
               }
             ] ,
             // Move the Reject to error for now

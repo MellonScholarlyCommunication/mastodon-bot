@@ -1,5 +1,5 @@
 const logger = require('ldn-inbox-server').getLogger();
-const { getCache } = require('../lib/cache');
+const { getCache, getCacheContext } = require('../lib/cache');
 
 /**
  * Handler restore the original notification
@@ -9,8 +9,9 @@ async function handle({path,options,config,notification}) {
         // Try to find the original toot for which metadata was requested
         const inReplyTo = notification['inReplyTo'];
         const cachedContent = await getCache(inReplyTo);
+        const cachedContext = await getCacheContext(inReplyTo);
  
-        const originalId = cachedContent.original;
+        const originalId = cachedContext.original;
  
         if (! originalId) {
             logger.error(`can not find original id in context ${inReplyTo}`);

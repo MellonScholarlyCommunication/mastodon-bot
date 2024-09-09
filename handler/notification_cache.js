@@ -7,7 +7,14 @@ const { addCache } = require('../lib/cache');
  */
 async function handle({path,options,config,notification}) {
     try {
-        await addCache(notification);
+        const originalNotification = options['originalNotification'];
+        
+        if (originalNotification) {
+            await addCache(notification, { original: originalNotification['id']});
+        }
+        else {
+            await addCache(notification);
+        }
 
         return { path, options, success: true };
     }

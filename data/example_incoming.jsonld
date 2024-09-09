@@ -10,9 +10,9 @@
       "type": "Person"
     },
     "origin": {
-      "id": "http://mycontributions.info/service/m/profile/card#me",
+      "id": "https://mycontributions.info/service/m/profile/card#me",
       "name": "Mastodon Bot",
-      "inbox": "http://mycontributions.info/service/m/inbox/",
+      "inbox": "https://mycontributions.info/service/m/inbox/",
       "type": "Service"
     },
     "object": {

@@ -29,8 +29,7 @@ async function handle({path,options,config,notification}) {
             fs.writeFileSync(outboxFile,offerStr);
 
             // Cache a context document for the original request
-            offer['original'] = notification['id'];
-            await addCache(offer);
+            await addCache(offer, { original: notification['id'] } );
         }
 
         return { path, options, success: true };

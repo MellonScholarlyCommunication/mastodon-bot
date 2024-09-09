@@ -19,8 +19,10 @@ program
 
 program
     .command('list')
-    .action( async () => {
-        const result = await cache.listCache();
+    .argument('[queryPath]','query')
+    .argument('[contextPath]','query')
+    .action( async (queryPath,contextPath) => {
+        const result = await cache.listCache(queryPath,contextPath);
         console.log(result);
     });
 
@@ -39,7 +41,12 @@ program
         for (let i = 0 ; i < file.length ; i++) {
             const json = file[i];
             const data = JSON.parse(fs.readFileSync(json, { encoding: 'utf-8'}));
-            const result = await cache.addCache(data);
+            const context = {};
+            if (data.original) {
+                // Hack to inject an original in the data for test purposes...
+                context['original'] = data.original;
+            }
+            const result = await cache.addCache(data,context);
             console.log(result);
         }
     });
@@ -55,7 +62,7 @@ program
 program
     .command('remove-all')
     .action( async () => {
-        const list = cache.listCache();
+        const list = await cache.listCache();
         for (let i = 0 ; i < list.length ; i++) {
             const result = await cache.removeCache(list[i]);
             console.log(`${list[i]} ${result}`);
@@ -64,22 +71,51 @@ program
 
 program
     .command('summary')
-    .action( async () => {
-        const list = await cache.listCache();
-        for (let i = 0 ; i < list.length ; i++) {
-            const notification = await cache.getCache(list[i]);
-            const id = notification.id;
-            const type = notification.type;
-            const actor = notification.actor.id;
-            const object = notification.object.id;
-            const updated = notification.updated;
-
-            console.log(`${chalk.blue(id)} ${chalk.red(type)}`);
-            console.log(` ${chalk.yellow('from')}: ${actor}`);
-            console.log(` ${chalk.yellow('object')}: ${object}`);
-            console.log(` ${chalk.yellow('updated')}: ${updated}`);
-            console.log();
+    .argument('[id]', 'for this identifier')
+    .action( async (id) => {
+        if (id) {
+            await summaryFor(id);
+        
+            const list = await cache.listCache('',`original=${id}`);
+            for (let i = 0 ; i < list.length ; i++) {
+                await summaryFor(list[i],2);
+            }
+        }
+        else {
+            const list = await cache.listCache();
+            for (let i = 0 ; i < list.length ; i++) {
+                await summaryFor(list[i]);
+            }
         }
     });
 
 program.parse();
+
+async function summaryFor(thisId,spacing = 0) {
+
+    const notification = await cache.getCache(thisId);
+    const context = await cache.getCacheContext(thisId);
+
+    if (! (notification && context)) {
+        return;
+    }
+    
+    const id = notification.id;
+    const type = notification.type;
+    const actor = notification.actor.id;
+    const object = notification.object.id;
+    const updated = context.updated;
+
+    let sp = ' '.repeat(spacing); 
+    
+    console.log(`${sp}${chalk.blue(id)} ${chalk.red(type)}`);
+    console.log(`${sp} ${chalk.yellow('from')}: ${actor}`);
+    console.log(`${sp} ${chalk.yellow('object')}: ${object}`);
+    console.log(`${sp} ${chalk.yellow('updated')}: ${updated}`);
+    
+    if (context.original) {
+        console.log(`${sp} ${chalk.yellow('original')}: ${chalk.blue(context.original)}`);
+    }
+
+    console.log();
+}
