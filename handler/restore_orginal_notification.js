@@ -1,5 +1,5 @@
 const logger = require('ldn-inbox-server').getLogger();
-const { getCache, getCacheContext } = require('../lib/cache');
+const { getCache, getCacheContext } = require('eventlog-server');
 
 /**
  * Handler restore the original notification

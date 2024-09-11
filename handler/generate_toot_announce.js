@@ -1,6 +1,6 @@
 const logger = require('ldn-inbox-server').getLogger();
 const { generateId , generatePublished } = require('ldn-inbox-server');
-const { addCache } = require('../lib/cache');
+const { addCache } = require('eventlog-server');
 
 /**
  * Handler send creata a fake notification as if an Event Notification

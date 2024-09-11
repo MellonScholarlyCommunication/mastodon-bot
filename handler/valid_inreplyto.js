@@ -1,7 +1,7 @@
 const logger = require('ldn-inbox-server').getLogger();
 const fs = require('fs');
 const fsPath = require('path');
-const { getCache } = require('../lib/cache');
+const { getCache } = require('eventlog-server');
 
 /**
  * Handler to check if the inreply to contains a known notification

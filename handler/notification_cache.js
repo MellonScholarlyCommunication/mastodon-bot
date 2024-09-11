@@ -1,6 +1,5 @@
 const logger = require('ldn-inbox-server').getLogger();
-const { parseAsJSON } = require('ldn-inbox-server');
-const { addCache } = require('../lib/cache');
+const { addCache } = require('eventlog-server');
 
 /**
  * Store the notification in a cache database
