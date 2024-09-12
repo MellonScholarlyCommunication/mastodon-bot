@@ -1,3 +1,4 @@
 {
-    "Content-Type": "text/html"
+    "Content-Type": "text/html",
+    "Link-Template": "\"https://mycontributions.info/service/e/trace?artifact={url}\"; rel=\"eventlog\""
 }
