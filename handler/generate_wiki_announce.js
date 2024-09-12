@@ -8,10 +8,10 @@ const { addCache } = require('eventlog-server');
  */
 async function handle({path,options,config,notification}) {
     try {
-        const toot_fragment = options['toot'];
+        const researcherProfile = options['researcherProfile'];
 
-        if (! toot_fragment) {
-            logger.error(`no toot found in options`);
+        if (! researcherProfile) {
+            logger.error(`no researcherProfile found in options`);
             return { path, options, success: false };
         }
 
@@ -38,7 +38,7 @@ async function handle({path,options,config,notification}) {
 
         logger.info(`Creating Announce to ${actor}`);
 
-        const announce = makeAnnounce(originalNotification,toot_fragment,config);
+        const announce = makeAnnounce(originalNotification,researcherProfile,config);
 
         await addCache(announce, { original: originalNotification.id });
 
@@ -51,7 +51,7 @@ async function handle({path,options,config,notification}) {
     }
 }
 
-function makeAnnounce(original,toot,config) {
+function makeAnnounce(original,researcherProfile,config) {
     return {
         "@context": "https://www.w3.org/ns/activitystreams",
         "id": generateId(),
@@ -59,9 +59,7 @@ function makeAnnounce(original,toot,config) {
         "published": generatePublished(),
         "actor": config['actor'],
         "object": {
-          "id": generateId(),
-          "type": "Note",
-          "content": toot
+          "id": researcherProfile
         },
         "target": original['actor']
     };

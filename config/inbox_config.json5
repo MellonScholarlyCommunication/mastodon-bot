@@ -92,6 +92,10 @@
               {
                 "id": "./handler/restore_orginal_notification.js"
               },
+              // Cache this notification for later use
+              {
+                "id": "./handler/notification_cache.js"
+              },
               // Restore the researcher profile
               {
                 "id": "./handler/restore_researcher_profile.js"
@@ -103,6 +107,16 @@
               // Send a sad toot to the user 
               {
                 "id": "./handler/send_toot.js"
+              },
+              // Generate a event notification for this toot also
+              { 
+                "id": "./handler/generate_toot_announce.js" ,
+                "actor": {
+                  "id": "https://mycontributions.info/service/m/profile/card#me",
+                  "name": "Mastodon Bot",
+                  "inbox": "https://mycontributions.info/service/m/inbox/",
+                  "type": "Service"
+                }
               },
               // Move the failed notification to error
               {
