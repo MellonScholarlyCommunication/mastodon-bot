@@ -48,12 +48,19 @@
                 "id": "./handler/update_wiki.js"
               },
               // Generate a event notification for the researcher profile update also
+              // (Should be a real one later it the project?)
               { 
                 "id": "./handler/generate_wiki_announce.js" ,
                 "actor": {
                   "id": "https://wiki.mycontributions.info/profile/card#me",
                   "name": "Wiki.JS",
                   "inbox": "https://wiki.mycontributions.info/inbox/",
+                  "type": "Service"
+                } ,
+                "target": {
+                  "id": "https://mycontributions.info/service/m/profile/card#me",
+                  "name": "Mastodon Bot",
+                  "inbox": "https://mycontributions.info/service/m/inbox/",
                   "type": "Service"
                 }
               },
@@ -62,6 +69,7 @@
                 "id": "./handler/send_toot.js"
               },
               // Generate a event notification for this toot also
+              // (Should be a real one later it the project?)
               { 
                 "id": "./handler/generate_toot_announce.js" ,
                 "actor": {

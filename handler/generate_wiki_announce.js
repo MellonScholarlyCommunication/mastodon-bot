@@ -61,7 +61,7 @@ function makeAnnounce(original,researcherProfile,config) {
         "object": {
           "id": researcherProfile
         },
-        "target": original['actor']
+        "target": config['target']
     };
 }
 
