@@ -16,7 +16,10 @@
     "real-clean": "rm .history ; yarn run clean",
     "demo-accepted": "cp data/example_incoming.jsonld accepted",
     "demo-metadata": "npx eventlog-server add data/example_incoming.jsonld data/example_outgoing.jsonld ; cp data/example_metadata.jsonld inbox",
-    "demo-metadata-reject": "npx eventlog-server add data/example_incoming.jsonld data/example_outgoing.jsonld ; cp data/example_metadata_reject.jsonld inbox"
+    "demo-metadata-reject": "npx eventlog-server add data/example_incoming.jsonld data/example_outgoing.jsonld ; cp data/example_metadata_reject.jsonld inbox",
+    "cache-admin": "npx eventlog-server",
+    "wikijs-cli": "npx wikijs",
+    "wikijs-updater": "npx updater"
   },
   "dependencies": {
     "chalk": "2.4.2",

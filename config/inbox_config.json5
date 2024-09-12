@@ -47,6 +47,16 @@
               {
                 "id": "./handler/update_wiki.js"
               },
+              // Generate a event notification for the researcher profile update also
+              { 
+                "id": "./handler/generate_wiki_announce.js" ,
+                "actor": {
+                  "id": "https://wiki.mycontributions.info/profile/card#me",
+                  "name": "Wiki.JS",
+                  "inbox": "https://wiki.mycontributions.info/inbox/",
+                  "type": "Service"
+                }
+              },
               // Send a happy toot to the user
               {
                 "id": "./handler/send_toot.js"
