@@ -58,6 +58,7 @@ function makeAnnounce(original,toot,config) {
         "type": "Announce",
         "published": generatePublished(),
         "actor": config['actor'],
+        "context": original['object']['id'],
         "object": {
           "id": generateId(),
           "type": "Note",

@@ -59,7 +59,8 @@ function makeAnnounce(original,researcherProfile,config) {
         "published": generatePublished(),
         "actor": config['actor'],
         "object": {
-          "id": researcherProfile
+          "id": researcherProfile ,
+          "type": "WebPage"
         },
         "target": config['target']
     };
