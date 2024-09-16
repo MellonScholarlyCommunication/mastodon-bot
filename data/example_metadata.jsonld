@@ -4,15 +4,15 @@
     "type": "Announce",
     "published": "2024-08-14T11:49:03.159Z",
     "actor": {
-        "id": "https://mycontributions.info/service/z/profile/card#me",
+        "id": "https://mycontributions.info/service/x/profile/card#me",
         "name": "Zotero Service Provider",
-        "inbox": "https://mycontributions.info/service/z/inbox/",
+        "inbox": "https://mycontributions.info/service/x/inbox/",
         "type": "Service"
     },
     "origin": {
-        "id": "https://mycontributions.info/service/z/profile/card#me",
+        "id": "https://mycontributions.info/service/x/profile/card#me",
         "name": "Zotero Service Provider",
-        "inbox": "https://mycontributions.info/service/z/inbox/",
+        "inbox": "https://mycontributions.info/service/x/inbox/",
         "type": "Service"
     },
     "inReplyTo": "urn:uuid:75806b42-41f5-46fb-8519-6e964c93c19e",

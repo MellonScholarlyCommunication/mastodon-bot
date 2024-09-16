@@ -13,5 +13,11 @@
     "object": {
       "id": "https://journal.code4lib.org/articles/17823",
       "type": "Document"
+    },
+    "target": {
+        "id": "https://mycontributions.info/service/x/profile/card#me",
+        "name": "Zotero Service Provider",
+        "inbox": "https://mycontributions.info/service/x/inbox/",
+        "type": "Service"
     }
 }
