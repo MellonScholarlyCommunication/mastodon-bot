@@ -7,6 +7,13 @@ const { addCache } = require('eventlog-server');
  */
 async function handle({path,options,config,notification}) {
     try {
+        const htmlCitation = options['htmlCitation'];
+
+        if (! htmlCitation) {
+            logger.error(`no htmlCitation found in options`);
+            return { path, options, success: false };
+        }
+
         const researcherProfile = options['researcherProfile'];
 
         if (! researcherProfile) {
@@ -21,11 +28,11 @@ async function handle({path,options,config,notification}) {
             return { path, options, success: false };
         }
 
-        logger.info(`Creating Announce to ${config.actor.id}`);
+        logger.info(`Creating Offer to ${config.actor.id}`);
 
-        const announce = makeAnnounce(originalNotification,researcherProfile,config);
+        const offer = makeOffer(htmlCitation,researcherProfile,config);
 
-        await addCache(announce, { original: originalNotification.id });
+        await addCache(offer, { original: originalNotification.id });
 
         return { path, options, success: true };
     }
@@ -36,17 +43,18 @@ async function handle({path,options,config,notification}) {
     }
 }
 
-function makeAnnounce(original,researcherProfile,config) {
+function makeOffer(htmlCitation,researcherProfile,config) {
     return {
         "@context": "https://www.w3.org/ns/activitystreams",
         "id": generateId(),
-        "type": "Announce",
+        "type": "Offer",
         "published": generatePublished(),
         "actor": config['actor'],
-        "context": original['object']['id'],
+        "context": researcherProfile,
         "object": {
-          "id": researcherProfile ,
-          "type": "WebPage"
+          "id": generateId(),
+          "content": htmlCitation ,
+          "type": "Note"
         },
         "target": config['target']
     };

@@ -47,6 +47,23 @@
               {
                 "id": "./handler/update_wiki.js"
               },
+              // Generate a event notification to update the researcher profile update also
+              // (Should be a real one later it the project?)
+              { 
+                "id": "./handler/generate_wiki_offer.js" ,
+                "actor": {
+                  "id": "https://mycontributions.info/service/m/profile/card#me",
+                  "name": "Mastodon Bot",
+                  "inbox": "https://mycontributions.info/service/m/inbox/",
+                  "type": "Service"
+                } ,
+                "target": {
+                  "id": "https://wiki.mycontributions.info/profile/card#me",
+                  "name": "Wiki.JS",
+                  "inbox": "https://wiki.mycontributions.info/inbox/",
+                  "type": "Service"
+                }
+              },
               // Generate a event notification for the researcher profile update also
               // (Should be a real one later it the project?)
               { 
