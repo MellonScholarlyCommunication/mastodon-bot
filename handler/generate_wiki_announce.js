@@ -58,6 +58,7 @@ function makeAnnounce(original,researcherProfile,config) {
         "type": "Announce",
         "published": generatePublished(),
         "actor": config['actor'],
+        "context": original['object']['id'],
         "object": {
           "id": researcherProfile ,
           "type": "WebPage"
