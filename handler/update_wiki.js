@@ -1,6 +1,4 @@
 const logger = require('ldn-inbox-server').getLogger();
-const fs = require('fs');
-const fsPath = require('path');
 const { resolvePage , getPage, contentInserter, updatePage } = require('wikijs-cli');
 
 /**

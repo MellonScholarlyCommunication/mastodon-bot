@@ -15,19 +15,10 @@
                     ]
                 ]
               },
-              // Only toots from friends
-              {
-                "id": "@handler/notification_handler/jsonpath_filter.js",
-                "anyOf": [ 
-                    [ { "path": "$.actor.id" , "value": "https://mastodon.social/@patrickhochstenbach" } ],
-                    [ { "path": "$.actor.id" , "value": "https://openbiblio.social/@hochstenbach" } ],
-                    [ { "path": "$.actor.id" , "value": "https://w3c.social/@hvdsomp" } ],
-                    [ { "path": "$.actor.id" , "value": "https://social.edu.nl/@hvdsomp" } ]
-                ]
-              },
               // Check if the actor has a researcher profile
               {
-                "id": "./handler/valid_researcher_profile.js"
+                "id": "./handler/valid_researcher_profile.js",
+                "contributionsBase": "https://wiki.mycontributions.info/en/researcher/orcid/"
               },
               // Cache this notification for later use
               {

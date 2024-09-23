@@ -1,6 +1,4 @@
 const logger = require('ldn-inbox-server').getLogger();
-const fs = require('fs');
-const fsPath = require('path');
 const { getCache } = require('eventlog-server');
 
 /**

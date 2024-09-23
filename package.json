@@ -29,6 +29,7 @@
     "mastodon-cli": "^1.0.8",
     "md5": "^2.3.0",
     "node-fetch": "^2.7.0",
+    "node-html-parser": "^6.1.13",
     "postgres": "^3.4.4"
   }
 }
