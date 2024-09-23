@@ -2,6 +2,8 @@ const logger = require('ldn-inbox-server').getLogger();
 const { getAttachment } = require('mastodon-cli');
 const fetch = require('node-fetch');
 const { parse } = require('node-html-parser');
+const { generateId , generatePublished } = require('ldn-inbox-server');
+const { addCache } = require('eventlog-server');
 
 /**
  * Handler to check if actor has a valid researcher profile
@@ -21,6 +23,13 @@ async function handle({path,options,config,notification}) {
             logger.info(`mastodon account: ${mastodonAccount}`);
         }
 
+        const mastodonView = makeView(mastodonAccount,config.actor,{
+            id: mastodonAccount
+        });
+
+        // Cache a context document for the original request
+        await addCache(mastodonView, { original: notification['id'] } );
+
         const researcherProfile = await getAttachment(mastodonAccount,/resea.*con.*/i);
 
         if (! researcherProfile) {
@@ -39,6 +48,11 @@ async function handle({path,options,config,notification}) {
             logger.info(`researcher profile has valid base url`);
         }
 
+        const wikiView = makeView(researcherProfile,config.actor,config.target);
+
+        // Cache a context document for the original request
+        await addCache(wikiView, { original: notification['id'] } );
+
         if (await hasLinkBack(researcherProfile,mastodonAccount)) {
             logger.info(`research profile has valid link back`);
         }
@@ -54,6 +68,21 @@ async function handle({path,options,config,notification}) {
         logger.error(e);
         return { path, options, success: false };
     }
+}
+
+function makeView(url,actor,target) {
+    return {
+        "@context": "https://www.w3.org/ns/activitystreams",
+        "id": generateId(),
+        "type": "View",
+        "published": generatePublished(),
+        "actor": actor,
+        "object": {
+          "id": url,
+          "type": "Document"
+        },
+        "target": target
+    };
 }
 
 async function hasLinkBack(researcherProfile,mastodonAccount) {

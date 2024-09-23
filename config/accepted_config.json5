@@ -18,7 +18,19 @@
               // Check if the actor has a researcher profile
               {
                 "id": "./handler/valid_researcher_profile.js",
-                "contributionsBase": "https://wiki.mycontributions.info/en/researcher/orcid/"
+                "contributionsBase": "https://wiki.mycontributions.info/en/researcher/orcid/",
+                "actor": {
+                  "id": "https://mycontributions.info/service/m/profile/card#me",
+                  "name": "Mastodon Bot",
+                  "inbox": "https://mycontributions.info/service/m/inbox/",
+                  "type": "Service"
+                },
+                "target": {
+                  "id": "https://wiki.mycontributions.info/profile/card#me",
+                  "name": "Wiki.JS",
+                  "inbox": "https://wiki.mycontributions.info/inbox/",
+                  "type": "Service"
+                }
               },
               // Cache this notification for later use
               {
