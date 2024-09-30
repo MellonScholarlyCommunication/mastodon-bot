@@ -48,7 +48,7 @@ Run the handler for incoming toots:
 yarn handle-accepted
 ```
 
-### Show handling of metadata toots
+### Show successful handling of metadata toots
 
 ```
 yarn real-clean
@@ -58,6 +58,24 @@ We assume now that an outgoing Offer has been sent to a Zotero service node and 
 
 ```
 yarn demo-metadata
+```
+
+Process the incoming metadata and update the Wiki
+
+```
+yarn handle-inbox
+```
+
+### Show failed handling of metadata toots
+
+```
+yarn real-clean
+```
+
+We assume now that an outgoing Offer has been sent to a Zotero service node and it will send some metadata back for the toot:
+
+```
+yarn demo-metadata-reject
 ```
 
 Process the incoming metadata and update the Wiki
