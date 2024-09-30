@@ -13,7 +13,7 @@ async function handle({path,options,config,notification}) {
             return { path, options, success: false };
         }
 
-        const cached = await getCache(inReplyTo);
+        const cached = await getCache(inReplyTo,{ name: process.env.CACHE_NAME });
 
         if (cached) {
             logger.info(`found a cached copy of ${inReplyTo}`);

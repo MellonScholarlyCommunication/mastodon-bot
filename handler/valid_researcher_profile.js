@@ -28,7 +28,7 @@ async function handle({path,options,config,notification}) {
         });
 
         // Cache a context document for the original request
-        await addCache(mastodonView, { original: notification['id'] } );
+        await addCache(mastodonView, { original: notification['id'] }, { name: process.env.CACHE_NAME });
 
         const researcherProfile = await getAttachment(mastodonAccount,/resea.*con.*/i);
 
@@ -51,7 +51,7 @@ async function handle({path,options,config,notification}) {
         const wikiView = makeView(researcherProfile,config.actor,config.target);
 
         // Cache a context document for the original request
-        await addCache(wikiView, { original: notification['id'] } );
+        await addCache(wikiView, { original: notification['id'] }, { name: process.env.CACHE_NAME });
 
         if (await hasLinkBack(researcherProfile,mastodonAccount)) {
             logger.info(`research profile has valid link back`);

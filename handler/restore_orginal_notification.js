@@ -8,8 +8,8 @@ async function handle({path,options,config,notification}) {
     try {
         // Try to find the original toot for which metadata was requested
         const inReplyTo = notification['inReplyTo'];
-        const cachedContent = await getCache(inReplyTo);
-        const cachedContext = await getCacheContext(inReplyTo);
+        const cachedContent = await getCache(inReplyTo,{ name: process.env.CACHE_NAME });
+        const cachedContext = await getCacheContext(inReplyTo,{ name: process.env.CACHE_NAME });
  
         const originalId = cachedContext.original;
  
@@ -21,7 +21,7 @@ async function handle({path,options,config,notification}) {
             logger.info(`original notification: ${originalId}`);
         }
  
-        const originalNotification = await getCache(originalId);
+        const originalNotification = await getCache(originalId,{ name: process.env.CACHE_NAME });
  
         if (! originalNotification) {
             logger.error('can not find original notification ${originalId}');

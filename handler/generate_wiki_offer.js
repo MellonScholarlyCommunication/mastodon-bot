@@ -32,7 +32,7 @@ async function handle({path,options,config,notification}) {
 
         const offer = makeOffer(htmlCitation,researcherProfile,config);
 
-        await addCache(offer, { original: originalNotification.id });
+        await addCache(offer, { original: originalNotification.id }, { name: process.env.CACHE_NAME });
 
         return { path, options, success: true };
     }

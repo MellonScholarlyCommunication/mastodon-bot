@@ -40,7 +40,7 @@ async function handle({path,options,config,notification}) {
 
         const announce = makeAnnounce(originalNotification,toot_fragment,config);
 
-        await addCache(announce, { original: originalNotification.id });
+        await addCache(announce, { original: originalNotification.id } , { name: process.env.CACHE_NAME });
 
         return { path, options, success: true };
     }

@@ -9,10 +9,10 @@ async function handle({path,options,config,notification}) {
         const originalNotification = options['originalNotification'];
         
         if (originalNotification) {
-            await addCache(notification, { original: originalNotification['id'] });
+            await addCache(notification, { original: originalNotification['id'] }, { name: process.env.CACHE_NAME });
         }
         else {
-            await addCache(notification, {});
+            await addCache(notification, {}, { name: process.env.CACHE_NAME });
         }
 
         return { path, options, success: true };
