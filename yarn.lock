@@ -402,19 +402,6 @@ esutils@^2.0.2:
   resolved "https://registry.npmjs.org/esutils/-/esutils-2.0.3.tgz"
   integrity sha512-kVscqXk4OCp68SZ0dkgEKVi6/8ij300KBWTJq32P/dYeWTSwK41WyTxalN1eRmA5Z9UU/LX9D7FWSmV9SAYx6g==
 
-"eventlog-server@file:../eventlog-server":
-  version "1.0.0"
-  resolved "file:../eventlog-server"
-  dependencies:
-    chalk "2.4.2"
-    commander "^12.1.0"
-    dotenv "^16.4.5"
-    log4js "^6.9.1"
-    md5 "^2.3.0"
-    mellon-server "^1.1.2"
-    postgres "^3.4.4"
-    url "^0.11.4"
-
 events@^3.3.0:
   version "3.3.0"
   resolved "https://registry.npmjs.org/events/-/events-3.3.0.tgz"
@@ -681,10 +668,10 @@ log4js@^6.9.1:
     rfdc "^1.3.0"
     streamroller "^3.1.5"
 
-mastodon-cli@^1.0.8:
-  version "1.0.8"
-  resolved "https://registry.npmjs.org/mastodon-cli/-/mastodon-cli-1.0.8.tgz"
-  integrity sha512-vK1sDLZtWJ4mbH6AUhmNw6eLX7Kk/6B6WNFHsEpXr7dtG+GDuUbkcBMTq8IQyWDZORSS30cEIxmhTT4HKwWn6w==
+mastodon-cli@^1.0.9:
+  version "1.0.9"
+  resolved "https://registry.npmjs.org/mastodon-cli/-/mastodon-cli-1.0.9.tgz"
+  integrity sha512-oBwsUNUutgapgvvN8vYY3KTqJDcuhJfGCtzf3jBo+ddmP2MuxNiWdY9vdnY68zMkRyMTr+LVTc1M4NXDfnFbyA==
   dependencies:
     commander "^12.1.0"
     dotenv "^16.4.5"
@@ -1105,6 +1092,22 @@ wikibase-sdk@^8.1.1:
   version "8.1.1"
   resolved "https://registry.npmjs.org/wikibase-sdk/-/wikibase-sdk-8.1.1.tgz"
   integrity sha512-1NjMnfNQ4OaLh0dFAeTMvV3vGAq6HXsNKGfYUJYOVyBPGBDMunlY3QZ8+72hLV5FiKmc6Bzg1xbI0jCHfHmIew==
+
+"wikijs-cli@file:../wikijs-cli":
+  version "1.0.0"
+  resolved "file:../wikijs-cli"
+  dependencies:
+    commander "^12.1.0"
+    dotenv "^16.4.5"
+    graphqurl "^1.0.3"
+    log4js "^6.9.1"
+    marked "4.0.18"
+    n3 "^1.22.3"
+    rdf-parse "2.3.3"
+    rdfa "^0.0.10"
+    string-similarity-js "^2.1.4"
+    string-to-stream "^3.0.1"
+    xmldom "^0.6.0"
 
 word-wrap@~1.2.3:
   version "1.2.5"
