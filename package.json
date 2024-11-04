@@ -25,7 +25,7 @@
     "chalk": "2.4.2",
     "citation-js": "^0.7.15",
     "commander": "^12.1.0",
-    "ldn-inbox-server": "^1.7.0",
+    "ldn-inbox-server": "^1.7.1",
     "mastodon-cli": "^1.0.9",
     "md5": "^2.3.0",
     "node-fetch": "^2.7.0",

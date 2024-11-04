@@ -21,7 +21,7 @@
     "@citation-js/plugin-wikidata" "^0.7.15"
     commander "^11.0.0"
 
-"@citation-js/core@^0.7.0", "@citation-js/core@^0.7.14", "@citation-js/core@0.7.14":
+"@citation-js/core@0.7.14", "@citation-js/core@^0.7.14":
   version "0.7.14"
   resolved "https://registry.npmjs.org/@citation-js/core/-/core-0.7.14.tgz"
   integrity sha512-dgeGqYDSQmn2MtnWZkwPGpJQPh43yr1lAAr9jl1NJ9pIY1RXUQxtlAUZVur0V9PHdbfQC+kkvB1KC3VpgVV3MA==
@@ -31,17 +31,17 @@
     fetch-ponyfill "^7.1.0"
     sync-fetch "^0.4.1"
 
-"@citation-js/date@^0.5.0", "@citation-js/date@0.5.1":
+"@citation-js/date@0.5.1", "@citation-js/date@^0.5.0":
   version "0.5.1"
   resolved "https://registry.npmjs.org/@citation-js/date/-/date-0.5.1.tgz"
   integrity sha512-1iDKAZ4ie48PVhovsOXQ+C6o55dWJloXqtznnnKy6CltJBQLIuLLuUqa8zlIvma0ZigjVjgDUhnVaNU1MErtZw==
 
-"@citation-js/name@^0.4.2", "@citation-js/name@0.4.2":
+"@citation-js/name@0.4.2", "@citation-js/name@^0.4.2":
   version "0.4.2"
   resolved "https://registry.npmjs.org/@citation-js/name/-/name-0.4.2.tgz"
   integrity sha512-brSPsjs2fOVzSnARLKu0qncn6suWjHVQtrqSUrnqyaRH95r/Ad4wPF5EsoWr+Dx8HzkCGb/ogmoAzfCsqlTwTQ==
 
-"@citation-js/plugin-bibjson@^0.7.14", "@citation-js/plugin-bibjson@0.7.14":
+"@citation-js/plugin-bibjson@0.7.14", "@citation-js/plugin-bibjson@^0.7.14":
   version "0.7.14"
   resolved "https://registry.npmjs.org/@citation-js/plugin-bibjson/-/plugin-bibjson-0.7.14.tgz"
   integrity sha512-Hcmk01KrpHwcl5uVoLE6TRaJRFg7/qUvpJDcKqx3LLLCsNbaBlISfRDeFETrjjipTetkX70RvtS7FfGUN58gCQ==
@@ -49,7 +49,7 @@
     "@citation-js/date" "^0.5.0"
     "@citation-js/name" "^0.4.2"
 
-"@citation-js/plugin-bibtex@^0.7.14", "@citation-js/plugin-bibtex@0.7.14":
+"@citation-js/plugin-bibtex@0.7.14", "@citation-js/plugin-bibtex@^0.7.14":
   version "0.7.14"
   resolved "https://registry.npmjs.org/@citation-js/plugin-bibtex/-/plugin-bibtex-0.7.14.tgz"
   integrity sha512-xHOHqhF6dthLRv46N9U+mQgYLiiWQHLvQWK9+mcBKz+/3NWge62Xb1oBouNWwLEPd5FV/8gp9fp7SOp93T0dUg==
@@ -58,7 +58,7 @@
     "@citation-js/name" "^0.4.2"
     moo "^0.5.1"
 
-"@citation-js/plugin-csl@^0.7.14", "@citation-js/plugin-csl@0.7.14":
+"@citation-js/plugin-csl@0.7.14", "@citation-js/plugin-csl@^0.7.14":
   version "0.7.14"
   resolved "https://registry.npmjs.org/@citation-js/plugin-csl/-/plugin-csl-0.7.14.tgz"
   integrity sha512-7AKB8lMz1IqdtoE33NnWIpteLYMuSl3xqT+Cax7sQKwAIJEoq2HBmb43Ja8xQQ36nREAupQJv1V6XksIAmYnCg==
@@ -66,14 +66,14 @@
     "@citation-js/date" "^0.5.0"
     citeproc "^2.4.6"
 
-"@citation-js/plugin-doi@^0.7.14", "@citation-js/plugin-doi@0.7.14":
+"@citation-js/plugin-doi@0.7.14", "@citation-js/plugin-doi@^0.7.14":
   version "0.7.14"
   resolved "https://registry.npmjs.org/@citation-js/plugin-doi/-/plugin-doi-0.7.14.tgz"
   integrity sha512-U/E9HrGcxXr6u8R0+Ivlb7SE0lNf+DzjmlArNSh+9B1iaakjy/PzI06Myvf8jQqWBhBD0JLl2xJvrwYK6iiD3A==
   dependencies:
     "@citation-js/date" "^0.5.0"
 
-"@citation-js/plugin-ris@^0.7.14", "@citation-js/plugin-ris@0.7.14":
+"@citation-js/plugin-ris@0.7.14", "@citation-js/plugin-ris@^0.7.14":
   version "0.7.14"
   resolved "https://registry.npmjs.org/@citation-js/plugin-ris/-/plugin-ris-0.7.14.tgz"
   integrity sha512-FZz1fa9dOrLAV/8NXgnqK1PfNKW/pOAXj1WDwoyGBrG+mbLtAwvTNhHDHGS5LvPoBbizqWkx8M8dYagke+FGOg==
@@ -81,7 +81,7 @@
     "@citation-js/date" "^0.5.0"
     "@citation-js/name" "^0.4.2"
 
-"@citation-js/plugin-wikidata@^0.7.15", "@citation-js/plugin-wikidata@0.7.15":
+"@citation-js/plugin-wikidata@0.7.15", "@citation-js/plugin-wikidata@^0.7.15":
   version "0.7.15"
   resolved "https://registry.npmjs.org/@citation-js/plugin-wikidata/-/plugin-wikidata-0.7.15.tgz"
   integrity sha512-QGYA9Mu/28B0LcQEpeAqtILE8+JmiVQux4lzysu/TWMl45b4AVW2ajfQIAwMNf455GERwUwD+P6oafDrqpLQFA==
@@ -296,7 +296,7 @@ dayjs@^1.11.13:
   resolved "https://registry.npmjs.org/dayjs/-/dayjs-1.11.13.tgz"
   integrity sha512-oaMBel6gjolK862uaPQOVTA7q3TZhuSvuMQAAglQDOWYO9A91IrAOUJEyKVlqJlHE0vq5p5UXxzdPfMH/x6xNg==
 
-debug@^4.3.4, debug@4:
+debug@4, debug@^4.3.4:
   version "4.3.7"
   resolved "https://registry.npmjs.org/debug/-/debug-4.3.7.tgz"
   integrity sha512-Er2nc/H7RrMXZBFCEim6TCmMk02Z8vLC2Rbi1KEBggpo0fS6l0S1nnapwmIi3yW/+GOJap1Krg4w0Hg80oCqgQ==
@@ -353,7 +353,7 @@ dotenv@^16.4.5:
   resolved "https://registry.npmjs.org/dotenv/-/dotenv-16.4.5.tgz"
   integrity sha512-ZmdL2rui+eB2YwhsWzjInR8LldtZHGDoQ1ugH85ppHKwpUHL7j7rN0Ti9NCnGiQbhaZ11FpR+7ao1dNsmduNUg==
 
-encoding@^0.1.0, encoding@^0.1.11:
+encoding@^0.1.11:
   version "0.1.13"
   resolved "https://registry.npmjs.org/encoding/-/encoding-0.1.13.tgz"
   integrity sha512-ETBauow1T35Y/WZMkio9jiM0Z5xjHHmJ4XmjZOq1l/dXz3lr2sRn87nJy20RupqSh1F2m3HHPSp8ShIPQJrJ3A==
@@ -382,15 +382,15 @@ escodegen@^1.8.1:
   optionalDependencies:
     source-map "~0.6.1"
 
-esprima@^4.0.1:
-  version "4.0.1"
-  resolved "https://registry.npmjs.org/esprima/-/esprima-4.0.1.tgz"
-  integrity sha512-eGuFFw7Upda+g4p+QHvnW0RyTX/SVeJBDM/gCtMARO0cLuT2HcEKnTPvhjV6aGeqrCB/sbNop0Kszm0jsaWU4A==
-
 esprima@1.2.2:
   version "1.2.2"
   resolved "https://registry.npmjs.org/esprima/-/esprima-1.2.2.tgz"
   integrity sha512-+JpPZam9w5DuJ3Q67SqsMGtiHKENSMRVoxvArfJZK01/BfLEObtZ6orJa/MtoGNR/rfMgp5837T41PAmTwAv/A==
+
+esprima@^4.0.1:
+  version "4.0.1"
+  resolved "https://registry.npmjs.org/esprima/-/esprima-4.0.1.tgz"
+  integrity sha512-eGuFFw7Upda+g4p+QHvnW0RyTX/SVeJBDM/gCtMARO0cLuT2HcEKnTPvhjV6aGeqrCB/sbNop0Kszm0jsaWU4A==
 
 estraverse@^4.2.0:
   version "4.3.0"
@@ -514,7 +514,7 @@ https-proxy-agent@^7.0.5:
     agent-base "^7.0.2"
     debug "4"
 
-iconv-lite@^0.6.2, iconv-lite@0.6.3:
+iconv-lite@0.6.3, iconv-lite@^0.6.2:
   version "0.6.3"
   resolved "https://registry.npmjs.org/iconv-lite/-/iconv-lite-0.6.3.tgz"
   integrity sha512-4fCk79wshMdzMp2rH06qWrJE4iolqLhCUH+OiuIgU++RB0+94NlDL81atO7GX55uUKueo0txHNtvEyI6D7WdMw==
@@ -628,10 +628,10 @@ jsonschema@^1.4.1:
   resolved "https://registry.npmjs.org/jsonschema/-/jsonschema-1.4.1.tgz"
   integrity sha512-S6cATIPVv1z0IlxdN+zUk5EPjkGCdnhN4wVSBlvoUO1tOLJootbo9CquNJmbIh4yikWHiUedhRYrNPn1arpEmQ==
 
-ldn-inbox-server@^1.7.0:
-  version "1.7.0"
-  resolved "https://registry.npmjs.org/ldn-inbox-server/-/ldn-inbox-server-1.7.0.tgz"
-  integrity sha512-UbvW3E/vKDzoyQyPWADm3Qiv+uw5St6nEiygkQK+GVnY/P+fjzowTuaPOLEMHXfGCoOX2Z6Zmx/zm4YLjIQuCw==
+ldn-inbox-server@^1.7.1:
+  version "1.7.1"
+  resolved "https://registry.yarnpkg.com/ldn-inbox-server/-/ldn-inbox-server-1.7.1.tgz#2d638c376b5cf512a704da02916d81e293de4ae2"
+  integrity sha512-azdxPMp0H3DgGqd8JosYo7Cx2/gzytHANy+D2HvAHNig5dI6hjluymfPBoiabjAvmfowRuCya0u6s3+s84+SQQ==
   dependencies:
     chokidar "^3.6.0"
     commander "^12.0.0"
@@ -752,6 +752,14 @@ node-addon-api@^3.0.0:
   resolved "https://registry.npmjs.org/node-addon-api/-/node-addon-api-3.2.1.tgz"
   integrity sha512-mmcei9JghVNDYydghQmeDX8KoAm0FAiYyIcUt/N4nhyAipB17pllZQDOJD2fotxABnt4Mdz+dKTO7eftLg4d0A==
 
+node-fetch@1.7.3:
+  version "1.7.3"
+  resolved "https://registry.npmjs.org/node-fetch/-/node-fetch-1.7.3.tgz"
+  integrity sha512-NhZ4CsKx7cYm2vSrBAr2PvFOe6sWDf0UYLRqA6svUYg7+/TSfVAu49jYC4BvQ4Sms9SZgdqGBgroqfDhJdTyKQ==
+  dependencies:
+    encoding "^0.1.11"
+    is-stream "^1.0.1"
+
 node-fetch@^2.6.1, node-fetch@^2.7.0:
   version "2.7.0"
   resolved "https://registry.npmjs.org/node-fetch/-/node-fetch-2.7.0.tgz"
@@ -765,14 +773,6 @@ node-fetch@~2.6.1:
   integrity sha512-StxNAxh15zr77QvvkmveSQ8uCQ4+v5FkvNTj0OESmiHu+VRi/gXArXtkWMElOsOUNLtUEvI4yS+rdtOHZTwlQA==
   dependencies:
     whatwg-url "^5.0.0"
-
-node-fetch@1.7.3:
-  version "1.7.3"
-  resolved "https://registry.npmjs.org/node-fetch/-/node-fetch-1.7.3.tgz"
-  integrity sha512-NhZ4CsKx7cYm2vSrBAr2PvFOe6sWDf0UYLRqA6svUYg7+/TSfVAu49jYC4BvQ4Sms9SZgdqGBgroqfDhJdTyKQ==
-  dependencies:
-    encoding "^0.1.11"
-    is-stream "^1.0.1"
 
 node-gyp-build@^4.2.2:
   version "4.8.2"
@@ -1093,28 +1093,12 @@ wikibase-sdk@^8.1.1:
   resolved "https://registry.npmjs.org/wikibase-sdk/-/wikibase-sdk-8.1.1.tgz"
   integrity sha512-1NjMnfNQ4OaLh0dFAeTMvV3vGAq6HXsNKGfYUJYOVyBPGBDMunlY3QZ8+72hLV5FiKmc6Bzg1xbI0jCHfHmIew==
 
-"wikijs-cli@file:../wikijs-cli":
-  version "1.0.0"
-  resolved "file:../wikijs-cli"
-  dependencies:
-    commander "^12.1.0"
-    dotenv "^16.4.5"
-    graphqurl "^1.0.3"
-    log4js "^6.9.1"
-    marked "4.0.18"
-    n3 "^1.22.3"
-    rdf-parse "2.3.3"
-    rdfa "^0.0.10"
-    string-similarity-js "^2.1.4"
-    string-to-stream "^3.0.1"
-    xmldom "^0.6.0"
-
 word-wrap@~1.2.3:
   version "1.2.5"
   resolved "https://registry.npmjs.org/word-wrap/-/word-wrap-1.2.5.tgz"
   integrity sha512-BN22B5eaMMI9UMtjrGd5g5eCYPpCPDUy0FJXbYsaT5zYxjFOckS53SQDE3pWkVoWpHXVb3BrYcEN4Twa55B5cA==
 
-ws@*, ws@^8.18.0, ws@8.18.0:
+ws@8.18.0, ws@^8.18.0:
   version "8.18.0"
   resolved "https://registry.npmjs.org/ws/-/ws-8.18.0.tgz"
   integrity sha512-8VbfWfHLbbwu3+N6OKsOMpBdT4kXPDDB9cJk2bJ6mh9ucxdlnNvH1e+roYkKmN9Nxw2yjz7VzeO9oOz2zJ04Pw==
