@@ -40,7 +40,7 @@ async function handle({path,options,config,notification}) {
 
         logger.info(`Sending toot : ${toot}`);
 
-        if (process.env.DEMO_MODE) {
+        if (process.env.DEMO_MODE && process.env.DEMO_MODE.includes('NO_TOOTS')) {
             logger.info(`**demo mode** I will not do anything`);
             return { path, options, success: true }; 
         }

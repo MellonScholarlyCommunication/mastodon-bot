@@ -62,7 +62,7 @@ async function handle({path,options,config,notification}) {
             return { path, options, success: true }; 
         }
 
-        if (process.env.DEMO_MODE) {
+        if (process.env.DEMO_MODE && process.env.DEMO_MODE.includes('NO_WIKI')) {
             logger.info(`**demo mode** I will not do anything`);
         }
         else {
