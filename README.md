@@ -10,6 +10,12 @@ npm link wikijs-cli
 npm link eventlog-server
 ```
 
+## Configuration
+
+```
+cp .env-example .env
+```
+
 ## Run the LDN Inbox server
 
 ```
