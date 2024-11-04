@@ -6,8 +6,8 @@ A Mastodon bot for the UGent/SURF researcher profile project.
 
 ```
 yarn install
-yarn link wikijs-cli
-yarn link eventlog-server
+npm link wikijs-cli
+npm link eventlog-server
 ```
 
 ## Run the LDN Inbox server

@@ -20,7 +20,15 @@ async function handle({path,options,config,notification}) {
             logger.info(`mastodon account: ${originalMastodonAccount}`);
         }
 
-        const researcherProfile = await getAttachment(originalMastodonAccount,/resea.*con.*/i);
+        let researcherProfile;
+
+        if (process.env.DEMO_PROFILE) {
+            researcherProfile = process.env.DEMO_PROFILE;
+            logger.warn(`DEMO_PROFILE found, faking profile ${researcherProfile}`);
+        }
+        else {
+            researcherProfile = await getAttachment(originalMastodonAccount,/resea.*con.*/i);
+        }
 
         if (! researcherProfile) {
             logger.error(`can not find researcher profile for ${originalMastodonAccount}`);

@@ -30,7 +30,15 @@ async function handle({path,options,config,notification}) {
         // Cache a context document for the original request
         await addCache(mastodonView, { original: notification['id'] }, { name: process.env.CACHE_NAME });
 
-        const researcherProfile = await getAttachment(mastodonAccount,/resea.*con.*/i);
+        let researcherProfile;
+
+        if (process.env.DEMO_PROFILE) {
+            researcherProfile = process.env.DEMO_PROFILE;
+            logger.warn(`DEMO_PROFILE found, faking profile ${researcherProfile}`);
+        }
+        else {
+            researcherProfile = await getAttachment(mastodonAccount,/resea.*con.*/i);
+        }
 
         if (! researcherProfile) {
             logger.error(`can not find researcher profile for ${mastodonAccount}`);
@@ -53,7 +61,10 @@ async function handle({path,options,config,notification}) {
         // Cache a context document for the original request
         await addCache(wikiView, { original: notification['id'] }, { name: process.env.CACHE_NAME });
 
-        if (await hasLinkBack(researcherProfile,mastodonAccount)) {
+        if (process.env.DEMO_PROFILE) {
+            logger.warn(`DEMO_PROFILE found, link back checks will be ignored`);
+        }
+        else if (await hasLinkBack(researcherProfile,mastodonAccount)) {
             logger.info(`research profile has valid link back`);
         }
         else {
