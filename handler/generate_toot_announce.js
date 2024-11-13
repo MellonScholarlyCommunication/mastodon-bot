@@ -3,7 +3,7 @@ const { generateId , generatePublished } = require('ldn-inbox-server');
 const { addCache } = require('eventlog-server');
 
 /**
- * Handler send creata a fake notification as if an Event Notification
+ * Handler send create a fake notification as if an Event Notification
  * event was created for sending the response toot
  */
 async function handle({path,options,config,notification}) {
@@ -11,8 +11,8 @@ async function handle({path,options,config,notification}) {
         const toot_fragment = options['toot'];
 
         if (! toot_fragment) {
-            logger.error(`no toot found in options`);
-            return { path, options, success: false };
+            logger.error(`no toot found in options (skipping)`);
+            return { path, options, success: true };
         }
 
         const originalNotification = options['originalNotification'];

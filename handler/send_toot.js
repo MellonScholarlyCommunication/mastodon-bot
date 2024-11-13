@@ -2,15 +2,15 @@ const logger = require('ldn-inbox-server').getLogger();
 const { sendNotification } = require('mastodon-cli');
 
 /**
- * Handler send a toot to the original sender
+ * Handler to send a toot to the original sender
  */
 async function handle({path,options,config,notification}) {
     try {
         const toot_fragment = options['toot'];
 
         if (! toot_fragment) {
-            logger.error(`no toot found in options`);
-            return { path, options, success: false };
+            logger.error(`no toot found in options (skipping)`);
+            return { path, options, success: true };
         }
 
         const originalNotification = options['originalNotification'];
