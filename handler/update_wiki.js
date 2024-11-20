@@ -59,13 +59,12 @@ async function handle({path,options,config,notification}) {
         }
         else {
             logger.info(`content seems similar, no update needed`);
-            return { path, options, success: true }; 
         }
 
         if (process.env.DEMO_MODE && process.env.DEMO_MODE.includes('NO_WIKI')) {
             logger.info(`**demo mode** I will not do anything`);
         }
-        else {
+        else if (updatedContent) {
             const newPage = await updatePage(currentPage.id , {
                 content: updatedContent
             }, {
@@ -80,6 +79,9 @@ async function handle({path,options,config,notification}) {
             else {
                 logger.info(`updated page ${currentPage.id} at wiki.js`);
             }
+        }
+        else {
+            logger.info(`yup, I skipped updating the wiki page`);
         }
 
         // Create the toot
