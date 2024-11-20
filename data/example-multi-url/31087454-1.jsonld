@@ -1,0 +1,34 @@
+{
+  "@context": "https://www.w3.org/ns/activitystreams",
+  "id": "urn:uuid:492c1a17-cccb-4ecc-af80-51096e13b7ff",
+  "type": "Announce",
+  "published": "2024-11-19T08:53:56.000Z",
+  "actor": {
+    "id": "https://mastodon.social/@patrickhochstenbach",
+    "name": "patrickhochstenbach",
+    "inbox": "https://mastodon.social/users/patrickhochstenbach/inbox",
+    "type": "Person"
+  },
+  "origin": {
+    "id": "https://mycontributions.info/service/m/profile/card#me",
+    "name": "Mastodon client",
+    "inbox": "https://mycontributions.info/service/m/inbox/",
+    "type": "Service"
+  },
+  "object": {
+    "id": "https://mastodon.social/@patrickhochstenbach/113508773813038632",
+    "content": "<p><span class=\"h-card\" translate=\"no\"><a href=\"https://mas.to/@claimbot\" class=\"u-url mention\" rel=\"nofollow noopener noreferrer\" target=\"_blank\">@<span>claimbot</span></a></span>  test4<br><a href=\"https://nos.nl/artikel/2540032-nobelprijs-voor-natuurkunde-voor-grondleggers-ai\" rel=\"nofollow noopener noreferrer\" translate=\"no\" target=\"_blank\"><span class=\"invisible\">https://</span><span class=\"ellipsis\">nos.nl/artikel/2540032-nobelpr</span><span class=\"invisible\">ijs-voor-natuurkunde-voor-grondleggers-ai</span></a> <a href=\"https://nos.nl/artikel/2542122-nederlander-verdacht-van-internationale-ai-oplichting\" rel=\"nofollow noopener noreferrer\" translate=\"no\" target=\"_blank\"><span class=\"invisible\">https://</span><span class=\"ellipsis\">nos.nl/artikel/2542122-nederla</span><span class=\"invisible\">nder-verdacht-van-internationale-ai-oplichting</span></a></p>",
+    "url": [
+      {
+        "type": "Link",
+        "href": "https://nos.nl/artikel/2540032-nobelprijs-voor-natuurkunde-voor-grondleggers-ai"
+      }
+    ],
+    "type": "Note"
+  },
+  "generator": {
+    "id": "https://www.npmjs.com/package/mastodon-cli",
+    "type": "Application",
+    "context": "https://mastodon.social/@patrickhochstenbach/113508773813038632"
+  }
+}

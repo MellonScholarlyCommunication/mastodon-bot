@@ -17,6 +17,7 @@
     "demo-accepted": "cp data/example_incoming.jsonld accepted",
     "demo-metadata": "npx eventlog-server add data/example_incoming.jsonld data/example_outgoing.jsonld ; cp data/example_metadata.jsonld inbox",
     "demo-metadata-reject": "npx eventlog-server add data/example_incoming.jsonld data/example_outgoing.jsonld ; cp data/example_metadata_reject.jsonld inbox",
+    "demo-multi-url": "cp data/example-multi-url/* accepted",
     "cache-admin": "npx eventlog-server",
     "wikijs-cli": "npx wikijs",
     "wikijs-updater": "npx updater"
@@ -26,7 +27,7 @@
     "citation-js": "^0.7.15",
     "commander": "^12.1.0",
     "ldn-inbox-server": "^1.7.1",
-    "mastodon-cli": "^1.1.4",
+    "mastodon-cli": "^1.1.5",
     "md5": "^2.3.0",
     "node-fetch": "^2.7.0",
     "node-html-parser": "^6.1.13",
