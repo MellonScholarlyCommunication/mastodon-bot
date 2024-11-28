@@ -46,7 +46,7 @@
               // Update the wikijs
               {
                 "id": "./handler/update_wiki.js",
-                "$sequential": true
+                "$lock": true
               },
               // Generate a event notification to update the researcher profile update also
               // (Should be a real one later it the project?)
