@@ -46,10 +46,16 @@ async function handle({path,options,config,notification}) {
         logger.debug(`htmlCitation`);
         logger.debug(htmlCitation);
 
+        // Ignore content based on similarity
+        // Number between +0 and 1.0
+        // score >= 1 means : all content is allowed
+        // 0 < sore < 1 means : low score = very different ; high score = very similar 
+        const max_similarity_score = process.env.WIKIJS_MAX_SIMILIARITY_SCORE || 0.9;
+
         const updatedContent = await contentInserter(currentContent, htmlCitation, {
             tag: "mastodon-bot",
             overwrite: false,
-            similarity: 0.9,
+            similarity: max_similarity_score,
             similarityNormalization: 'html'
         });
 
