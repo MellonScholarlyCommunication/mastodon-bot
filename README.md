@@ -181,5 +181,5 @@ docker run --rm --env-file .env -v `pwd`/inbox:/app/inbox -it hochstenbach/claim
 Push it to DockerHub:
 
 ```
-docker push hochstenbach/metadata-server:v0.0.1
+docker push hochstenbach/claimbot-server:v0.0.1
 ```
