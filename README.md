@@ -6,8 +6,6 @@ A Mastodon bot for the UGent/SURF researcher profile project.
 
 ```
 yarn install
-npm link wikijs-cli
-npm link eventlog-server
 ```
 
 ## Configuration
@@ -158,4 +156,30 @@ urn:uuid:6d21a2ae-df59-40d9-999c-18e19277d21a Announce
    object: urn:uuid:ab20087b-7b35-49f4-a42e-f73b7916c0ce
    updated: Mon Sep 30 2024 08:49:01 GMT+0200 (Central European Summer Time)
    original: urn:uuid:6d21a2ae-df59-40d9-999c-18e19277d21a
+```
+
+## Docker
+
+Build a version of a docker image:
+
+```
+docker build . -t hochstenbach/claimbot-server:v0.0.1
+```
+
+Run a docker image:
+
+```
+docker container run --env-file .env -p 3002:3002 --rm hochstenbach/claimbot-server:v0.0.1
+```
+
+Run only a shell
+
+```
+docker run --rm --env-file .env -v `pwd`/inbox:/app/inbox -it hochstenbach/claimbot-server:v0.0.1 sh
+```
+
+Push it to DockerHub:
+
+```
+docker push hochstenbach/metadata-server:v0.0.1
 ```
