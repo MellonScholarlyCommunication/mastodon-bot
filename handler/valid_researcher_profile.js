@@ -22,9 +22,7 @@ async function handle({path,options,config,notification}) {
             logger.info(`mastodon account: ${mastodonAccount}`);
         }
 
-        const mastodonView = makeView(mastodonAccount,config.actor,{
-            id: mastodonAccount
-        });
+        const mastodonView = makeView(mastodonAccount,config.actor,notification['actor']);
 
         // Cache a context document for the original request
         await addCache(mastodonView, { original: notification['id'] }, { name: process.env.CACHE_NAME });

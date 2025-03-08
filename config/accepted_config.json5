@@ -25,9 +25,9 @@
                   "type": "Service"
                 },
                 "target": {
-                  "id": "https://wiki.mycontributions.info/profile/card#me",
-                  "name": "Wiki.JS",
-                  "inbox": "https://wiki.mycontributions.info/inbox/",
+                  "id": "https://mycontributions.info/profiles/",
+                  "name": "Verification Service",
+                  "inbox": "https://mycontributions.info/profiles/inbox/",
                   "type": "Service"
                 }
               },
