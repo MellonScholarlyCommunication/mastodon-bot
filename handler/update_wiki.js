@@ -11,11 +11,11 @@ async function handle({path,options,config,notification}) {
 
         // Try to update the old Wiki.js researcher profile with the updated citation
         const wiki_url = process.env.WIKIJS_URL;
-        const wiki_acess_token = process.env.WIKIJS_ACCESS_TOKEN;
+        const wiki_access_token = process.env.WIKIJS_ACCESS_TOKEN;
 
         const resolvedPage = await resolvePage(researcherProfile, {
-            url: wiki_url ,
-            token: wiki_acess_token
+            url: `${wiki_url}/graphql` ,
+            token: wiki_access_token
         });
 
         if (! resolvedPage ) {
@@ -27,8 +27,8 @@ async function handle({path,options,config,notification}) {
         }
     
         const currentPage = await getPage(resolvedPage.id, {
-            url: wiki_url ,
-            token: wiki_acess_token 
+            url: `${wiki_url}/graphql` ,
+            token: wiki_access_token 
         });
 
         if (! currentPage) {
@@ -78,8 +78,8 @@ async function handle({path,options,config,notification}) {
             const newPage = await updatePage(currentPage.id , {
                 content: updatedContent
             }, {
-                url: wiki_url ,
-                token: wiki_acess_token
+                url: `${wiki_url}/graphql` ,
+                token: wiki_access_token
             });
 
             if (! newPage) {
