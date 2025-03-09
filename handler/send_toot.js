@@ -27,28 +27,29 @@ async function handle({path,options,config,notification}) {
             return { path, options, success: false };
         }
 
-        const matches = actor.match(/https?:\/\/([^\/]+).*@(.*)/);
-
-        if (! (matches && matches.length === 3)) {
-            logger.error(`actor ${actor} can't be parsed`);
-            return { path, options, success: false };
-        }
-
-        const account = `@${matches[2]}@${matches[1]}`;
-
-        const toot = `${account} ${toot_fragment}`;
-
-        logger.info(`Sending toot : ${toot}`);
-
         if (process.env.DEMO_MODE && process.env.DEMO_MODE.includes('NO_TOOTS')) {
             logger.info(`**demo mode** I will not do anything`);
             return { path, options, success: true }; 
         }
         else {
+            const matches = actor.match(/https?:\/\/([^\/]+).*@(.*)/);
+
+            if (! (matches && matches.length === 3)) {
+                logger.error(`actor ${actor} can't be parsed`);
+                return { path, options, success: false };
+            }
+
+            const account = `@${matches[2]}@${matches[1]}`;
+
+            const toot = `${account} ${toot_fragment}`;
+        
+            logger.info(`Sending toot : ${toot}`);
+
             await sendNotification(process.env.MASTODON_URL,toot, {
                 token: process.env.MASTODON_ACCESS_TOKEN,
                 visibility: 'unlisted'
             });
+            
             return { path, options, success: true };
         }
     }

@@ -29,13 +29,6 @@ async function handle({path,options,config,notification}) {
             return { path, options, success: false };
         }
 
-        const matches = actor.match(/https?:\/\/([^\/]+).*@(.*)/);
-
-        if (! (matches && matches.length === 3)) {
-            logger.error(`actor ${actor} can't be parsed`);
-            return { path, options, success: false };
-        }
-
         logger.info(`Creating Announce to ${actor}`);
 
         const announce = makeAnnounce(originalNotification,toot_fragment,config);

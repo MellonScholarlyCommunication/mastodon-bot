@@ -1,11 +1,12 @@
 const logger = require('ldn-inbox-server').getLogger();
-const { getAttachment } = require('mastodon-cli');
+const { verifyResearcher } = require('../lib/verifyResearcher');
 
 /**
  * Handler restore the researcher profile
  */
 async function handle({path,options,config,notification}) {
     try {
+        logger.info('restoring researcher profile');
         const originalNotification = options['originalNotification'];
 
         // Try to resolve the mastodon profile and find the link to the
@@ -20,25 +21,17 @@ async function handle({path,options,config,notification}) {
             logger.info(`mastodon account: ${originalMastodonAccount}`);
         }
 
-        let researcherProfile;
+        const profiles = await verifyResearcher(originalMastodonAccount);
 
-        if (process.env.DEMO_PROFILE) {
-            researcherProfile = process.env.DEMO_PROFILE;
-            logger.warn(`DEMO_PROFILE found, faking profile ${researcherProfile}`);
-        }
-        else {
-            researcherProfile = await getAttachment(originalMastodonAccount,/resea.*con.*/i);
-        }
-
-        if (! researcherProfile) {
-            logger.error(`can not find researcher profile for ${originalMastodonAccount}`);
+        if (! profiles) {
+            logger.error(`cannot verify ${originalMastodonAccount}`);
             return { path, options, success: false };
         }
         else {
-            logger.info(`researcher profile: ${researcherProfile}`);
+            logger.info(`bonsai (again)! %s`,profiles);
         }
 
-        options['researcherProfile'] = researcherProfile;
+        options['researcherProfile'] = profiles.researcherProfile;
 
         return { path, options, success: true };
     }
