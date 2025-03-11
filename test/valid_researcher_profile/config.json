@@ -1,0 +1,15 @@
+{
+    "id": "./handler/valid_researcher_profile.js",
+    "actor": {
+      "id": "https://mycontributions.info/service/m/profile/card#me",
+      "name": "Mastodon Bot",
+      "inbox": "https://mycontributions.info/service/m/inbox/",
+      "type": "Service"
+    },
+    "target": {
+      "id": "https://mycontributions.info/profile/",
+      "name": "Verification Service",
+      "inbox": "https://mycontributions.info/profile/inbox/",
+      "type": "Service"
+    }
+  }
