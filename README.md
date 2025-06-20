@@ -163,23 +163,23 @@ urn:uuid:6d21a2ae-df59-40d9-999c-18e19277d21a Announce
 Build a version of a docker image:
 
 ```
-docker build . -t hochstenbach/claimbot-server:v0.0.1
+docker build . -t hochstenbach/claimbot-server:v0.0.2
 ```
 
 Run a docker image:
 
 ```
-docker container run --env-file .env -p 3002:3002 --rm hochstenbach/claimbot-server:v0.0.1
+docker container run --env-file .env -p 3002:3002 --rm hochstenbach/claimbot-server:v0.0.2
 ```
 
 Run only a shell
 
 ```
-docker run --rm --env-file .env -v `pwd`/inbox:/app/inbox -it hochstenbach/claimbot-server:v0.0.1 sh
+docker run --rm --env-file .env -v `pwd`/inbox:/app/inbox -it hochstenbach/claimbot-server:v0.0.2 sh
 ```
 
 Push it to DockerHub:
 
 ```
-docker push hochstenbach/claimbot-server:v0.0.1
+docker push hochstenbach/claimbot-server:v0.0.2
 ```
