@@ -96,6 +96,22 @@
                   "inbox": "https://mycontributions.info/service/m/inbox/",
                   "type": "Service"
                 }
+              },
+              // Send an Announce to the ClaimLog service about this
+              {
+                "id": "./handler/update_claims_service.js",
+                "actor": {
+                  "id": "https://wiki.mycontributions.info/profile/card#me",
+                  "name": "Wiki.JS",
+                  "inbox": "https://wiki.mycontributions.info/inbox/",
+                  "type": "Service"
+                } ,
+                "target": {
+                  "id": "https://mycontributions.info/service/c/profile/card#me",
+                  "name": "ClaimLog Service",
+                  "inbox": "https://mycontributions.info/service/c/inbox/",
+                  "type": "Service"
+                }
               }
             ] ,
             // Move the Reject to error for now

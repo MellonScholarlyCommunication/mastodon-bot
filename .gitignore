@@ -1,5 +1,6 @@
 .env
 .nvmrc
+.lockdir
 node_modules
 inbox/**
 outbox/**
