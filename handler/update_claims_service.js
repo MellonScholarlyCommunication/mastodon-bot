@@ -1,5 +1,6 @@
 const logger = require('ldn-inbox-server').getLogger();
 const { generateId , generatePublished } = require('ldn-inbox-server');
+const { addCache } = require('eventlog-server');
 const md5 = require('md5');
 const fs = require('fs');
 
