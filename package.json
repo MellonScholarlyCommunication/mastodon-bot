@@ -21,7 +21,9 @@
     "demo-multi-url": "cp data/example-multi-url/* accepted",
     "cache-admin": "npx eventlog-server",
     "wikijs-cli": "npx wikijs",
-    "wikijs-updater": "npx updater"
+    "wikijs-updater": "npx updater",
+    "docker-build": "docker build . -t hochstenbach/claimbot-server:v0.0.2",
+    "docker-push": "docker push hochstenbach/claimbot-server:v0.0.2"
   },
   "dependencies": {
     "chalk": "2.4.2",
