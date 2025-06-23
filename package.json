@@ -28,7 +28,7 @@
     "citation-js": "^0.7.15",
     "commander": "^12.1.0",
     "eventlog-server": "https://github.com/MellonScholarlyCommunication/eventlog-server.git",
-    "ldn-inbox-server": "^1.8.3",
+    "ldn-inbox-server": "^1.8.4",
     "mastodon-cli": "^1.1.6",
     "md5": "^2.3.0",
     "node-fetch": "^2.7.0",
