@@ -12,19 +12,15 @@ async function handle({path,options,config,notification}) {
         logger.info('restoring mastodon artifact');
         const originalNotification = options['originalNotification'];
 
-        // Try to resolve the mastodon artifact
-        const originalArtifact = originalNotification['object']['id'];
-
-        if (! originalArtifact) {
-            logger.error(`can not find mastodon artifact in ${originalNotification.id}`);
+        if (! process.env.EVENTLOG_TRACE_URL) {
+            logger.error(`no EVENTLOG_TRACE_URL set`);
             return { path, options, success: false };
         }
-        else {
-            logger.info(`mastodon artifact: ${originalArtifact}`);
-        }
 
-        const url_href = process.env.EVENTLOG_TRACE_URL + originalArtifact;
+        const url_href = process.env.EVENTLOG_TRACE_URL + originalNotification.id;
 
+        logger.info(`generating announce to claim ${url_href}`);
+        
         const announce = makeAnnounce(url_href,config);
         const announceStr = JSON.stringify(announce,null,2);
 
