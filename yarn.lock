@@ -34,7 +34,7 @@
   resolved "https://registry.yarnpkg.com/@babel/helper-validator-identifier/-/helper-validator-identifier-7.25.9.tgz#24b64e2c3ec7cd3b3c547729b8d16871f22cbdc7"
   integrity sha512-Ed61U6XJc3CVRfkERJWDz4dJwKe7iLmmJsbOGu9wSloNSFttHV0I8g6UAgb7qnK5ly5bGLPd4oXZlxCdANBOWQ==
 
-"@badgateway/oauth2-client@^2.4.2":
+"@badgateway/oauth2-client@^2.3.0":
   version "2.4.2"
   resolved "https://registry.yarnpkg.com/@badgateway/oauth2-client/-/oauth2-client-2.4.2.tgz#8b57bc837ae059628e1437b915815c2fef26f282"
   integrity sha512-70Fmzlmn8EfCjjssls8N6E94quBUWnLhu4inPZU2pkwpc6ZvbErkLRvtkYl81KFCvVcuVC0X10QPZVNwjXo2KA==
@@ -977,10 +977,17 @@
   dependencies:
     "@rdfjs/types" ">=1.0.0"
 
-"@types/ws@^8.0.0", "@types/ws@^8.5.13":
+"@types/ws@^8.0.0":
   version "8.18.0"
   resolved "https://registry.yarnpkg.com/@types/ws/-/ws-8.18.0.tgz#8a2ec491d6f0685ceaab9a9b7ff44146236993b5"
   integrity sha512-8svvI3hMyvN0kKCJMvTJP/x6Y/EoQbepff882wL+Sn5QsXb3etnamgrJq4isrBxSJj5L2AuXcI0+bgkoAXGUJw==
+  dependencies:
+    "@types/node" "*"
+
+"@types/ws@^8.5.10":
+  version "8.18.1"
+  resolved "https://registry.yarnpkg.com/@types/ws/-/ws-8.18.1.tgz#48464e4bf2ddfd17db13d845467f6070ffea4aa9"
+  integrity sha512-ThVF6DCVhA8kUGy+aazFQ4kXQ7E1Ty7A3ypFOe0IcJV8O/M511G99AW24irKrW56Wt44yG9+ij8FaqoBGkuBXg==
   dependencies:
     "@types/node" "*"
 
@@ -1131,10 +1138,10 @@ asynckit@^0.4.0:
   resolved "https://registry.yarnpkg.com/asynckit/-/asynckit-0.4.0.tgz#c79ed97f7f34cb8f2ba1bc9790bcc366474b4b79"
   integrity sha512-Oei9OH4tRh0YqU3GxhX79dM/mwVgvbZJaSNaRk+bshkj0S5cfHcgYakreBjrHwatXKbz+IoIdYLxrKim2MjW0Q==
 
-axios@1.7.9:
-  version "1.7.9"
-  resolved "https://registry.yarnpkg.com/axios/-/axios-1.7.9.tgz#d7d071380c132a24accda1b2cfc1535b79ec650a"
-  integrity sha512-LhLcE7Hbiryz8oMDdDptSrWowmB4Bl6RCt6sIJKpRB4XtVf0iEgewX3au/pJqm+Py1kCASkb/FFKjxQaLtxJvw==
+axios@1.7.2:
+  version "1.7.2"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-1.7.2.tgz#b625db8a7051fbea61c35a3cbb3a1daa7b9c7621"
+  integrity sha512-2A8QhOMrbomlDuiLeK9XibIBzuHeRcqqNOHp0Cyp5EoJ1IFDh+XZH3A6BkXtv0K4gFGCI0Y4BM7B1wOEi0Rmgw==
   dependencies:
     follow-redirects "^1.15.6"
     form-data "^4.0.0"
@@ -1519,7 +1526,7 @@ date-format@^4.0.14:
   resolved "https://registry.yarnpkg.com/date-format/-/date-format-4.0.14.tgz#7a8e584434fb169a521c8b7aa481f355810d9400"
   integrity sha512-39BOQLs9ZjKh0/patS9nrT8wc3ioX3/eA/zgbKNopnF2wCqJEoxywwwElATYvRsXdnOxA/OQeQoFZ3rFjVajhg==
 
-dayjs@^1.11.13:
+dayjs@^1.11.11:
   version "1.11.13"
   resolved "https://registry.yarnpkg.com/dayjs/-/dayjs-1.11.13.tgz#92430b0139055c3ebb60150aa13e860a4b5a366c"
   integrity sha512-oaMBel6gjolK862uaPQOVTA7q3TZhuSvuMQAAglQDOWYO9A91IrAOUJEyKVlqJlHE0vq5p5UXxzdPfMH/x6xNg==
@@ -1902,7 +1909,7 @@ follow-redirects@^1.15.6:
   resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.15.9.tgz#a604fa10e443bf98ca94228d9eebcc2e8a2c8ee1"
   integrity sha512-gew4GsXizNgdoRyqmyfMHyAmXsZDk6mHkSxZFCzW9gwlbtOW44CDtYavM+y+72qD/Vq2l550kMF52DT8fOLJqQ==
 
-form-data@^4.0.0, form-data@^4.0.1:
+form-data@^4.0.0:
   version "4.0.2"
   resolved "https://registry.yarnpkg.com/form-data/-/form-data-4.0.2.tgz#35cabbdd30c3ce73deb2c42d3c8d3ed9ca51794c"
   integrity sha512-hGfm/slu0ZabnNt4oaRZ6uREyfCj6P4fT/n6A1rGV+Z0VdGXjfOhVUpkn6qVQONHGIFwmveGXyDs75+nr6FM8w==
@@ -2560,10 +2567,10 @@ marked@4.0.18:
   resolved "https://registry.yarnpkg.com/marked/-/marked-4.0.18.tgz#cd0ac54b2e5610cfb90e8fd46ccaa8292c9ed569"
   integrity sha512-wbLDJ7Zh0sqA0Vdg6aqlbT+yPxqLblpAZh1mK2+AO2twQkPywvvqQNfEPVwSSRjZ7dZcdeVBIAgiO7MMp3Dszw==
 
-mastodon-cli@^1.1.6:
-  version "1.1.6"
-  resolved "https://registry.yarnpkg.com/mastodon-cli/-/mastodon-cli-1.1.6.tgz#c917d6afbdc3857540240ec833a1e209ba7f764b"
-  integrity sha512-LtteqZXf2v7S81sctBgQvmM6fJPuwjipY/m2ZAXdNSHhvPMl90zw3OPO62JcxtYV/6KuFqUE1nh8krDQrFKDew==
+mastodon-cli@^1.1.12:
+  version "1.1.12"
+  resolved "https://registry.yarnpkg.com/mastodon-cli/-/mastodon-cli-1.1.12.tgz#b5cb0145a6fab3dfcd9b37d107660e928a9dd57b"
+  integrity sha512-JAVgNW4V7N+yijlFtwFz3Z9rxfTrEW0Gu/Op6KpdalCJv49yd8zQ12U+/kzJn4QmrdcvYBoNt/dc5RtwpwiunQ==
   dependencies:
     commander "^12.1.0"
     dotenv "^16.4.5"
@@ -2571,7 +2578,7 @@ mastodon-cli@^1.1.6:
     jquery "^3.7.1"
     jsdom "^24.1.1"
     log4js "^6.9.1"
-    megalodon "^10.0.2"
+    megalodon "=10.0.2"
     node-fetch "1.7.3"
     uuid "^10.0.0"
 
@@ -2594,21 +2601,21 @@ media-typer@0.3.0:
   resolved "https://registry.yarnpkg.com/media-typer/-/media-typer-0.3.0.tgz#8710d7af0aa626f8fffa1ce00168545263255748"
   integrity sha512-dq+qelQ9akHpcOl/gUVRTxVIOkAJ1wR3QAvb4RsVjS8oVoFjDGTc679wJYmUmknUF5HwMLOgb5O+a3KxfWapPQ==
 
-megalodon@^10.0.2:
-  version "10.1.1"
-  resolved "https://registry.yarnpkg.com/megalodon/-/megalodon-10.1.1.tgz#477da0814e443d1fc86b52f708d17da2e39e1411"
-  integrity sha512-mjgXVZ39/Uaw7OY4n/YbwqWv7hfTfY2Lcjtr2yypBfvuBe0wstmQquQDT7xgeFOl7oC2THmR5mWj1cVH1Cjc5Q==
+megalodon@=10.0.2:
+  version "10.0.2"
+  resolved "https://registry.yarnpkg.com/megalodon/-/megalodon-10.0.2.tgz#072d2cad2ba192da753de87511a61913ea86dba3"
+  integrity sha512-bRqdJOXgiC6EKYGeN2ghcmghtvoaIzgchC77g51xkbIcy6y7XGl3kB7dLoMAciwLZtVKcf9rEX703nfgzySRIg==
   dependencies:
-    "@badgateway/oauth2-client" "^2.4.2"
-    "@types/ws" "^8.5.13"
-    axios "1.7.9"
-    dayjs "^1.11.13"
+    "@badgateway/oauth2-client" "^2.3.0"
+    "@types/ws" "^8.5.10"
+    axios "1.7.2"
+    dayjs "^1.11.11"
     events "^3.3.0"
-    form-data "^4.0.1"
+    form-data "^4.0.0"
     isomorphic-ws "^5.0.0"
     object-assign-deep "^0.4.0"
-    uuid "^11.0.3"
-    ws "8.18.0"
+    uuid "^10.0.0"
+    ws "8.17.1"
 
 mellon-server@^1.1.0, mellon-server@^1.1.2:
   version "1.1.2"
@@ -3740,11 +3747,6 @@ uuid@^10.0.0:
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-10.0.0.tgz#5a95aa454e6e002725c79055fd42aaba30ca6294"
   integrity sha512-8XkAphELsDnEGrDxUOHB3RGvXz6TeuYSGEZBOjtTtPm2lwhGBjLgOzLHB63IUWfBpNucQjND6d3AOudO+H3RWQ==
 
-uuid@^11.0.3:
-  version "11.1.0"
-  resolved "https://registry.yarnpkg.com/uuid/-/uuid-11.1.0.tgz#9549028be1753bb934fc96e2bca09bb4105ae912"
-  integrity sha512-0/A9rDy9P7cJ+8w1c9WD9V//9Wj15Ce2MPz8Ri6032usz+NfePxx5AcN3bN+r6ZL6jEo066/yNYB3tn4pQEx+A==
-
 uuid@^9.0.1:
   version "9.0.1"
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-9.0.1.tgz#e188d4c8853cc722220392c424cd637f32293f30"
@@ -3899,10 +3901,10 @@ ws@8.13.0:
   resolved "https://registry.yarnpkg.com/ws/-/ws-8.13.0.tgz#9a9fb92f93cf41512a0735c8f4dd09b8a1211cd0"
   integrity sha512-x9vcZYTrFPC7aSIbj7sRCYo7L/Xb8Iy+pW0ng0wt2vCJv7M9HOMy0UoN3rr+IFC7hb7vXoqS+P9ktyLLLhO+LA==
 
-ws@8.18.0:
-  version "8.18.0"
-  resolved "https://registry.yarnpkg.com/ws/-/ws-8.18.0.tgz#0d7505a6eafe2b0e712d232b42279f53bc289bbc"
-  integrity sha512-8VbfWfHLbbwu3+N6OKsOMpBdT4kXPDDB9cJk2bJ6mh9ucxdlnNvH1e+roYkKmN9Nxw2yjz7VzeO9oOz2zJ04Pw==
+ws@8.17.1:
+  version "8.17.1"
+  resolved "https://registry.yarnpkg.com/ws/-/ws-8.17.1.tgz#9293da530bb548febc95371d90f9c878727d919b"
+  integrity sha512-6XQFvXTkbfUOZOKKILFG1PDK2NDQs4azKQl26T0YS5CxqWLgXajbPZ+h4gZekJyRqFU8pvnbAbbs/3TgRPy+GQ==
 
 ws@^5.2.0:
   version "5.2.4"

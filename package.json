@@ -31,7 +31,7 @@
     "commander": "^12.1.0",
     "eventlog-server": "https://github.com/MellonScholarlyCommunication/eventlog-server.git",
     "ldn-inbox-server": "^1.8.5",
-    "mastodon-cli": "^1.1.6",
+    "mastodon-cli": "^1.1.12",
     "md5": "^2.3.0",
     "node-fetch": "^2.7.0",
     "node-html-parser": "^6.1.13",
